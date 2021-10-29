@@ -1,0 +1,6 @@
+# Reprise du code 007_ANALYSE_10_Films_les_mieux_notés
+
+# Nettoyage des films dont le genre est '\N' ou non renseigné : 
+List_genres_clean = Top_10_movies_by_ratings[Top_10_movies_by_ratings['genres'] != '\\N']
+List_genres_clean2 = List_genres_clean.dropna(subset = ['genres'])
+
