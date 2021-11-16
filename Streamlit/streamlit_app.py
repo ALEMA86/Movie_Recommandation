@@ -365,7 +365,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/countrydf.csv')
+        country_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/Country.csv')
         col1, col2 = st.columns([1, 2])
         with col1:
             st.title(' ')
@@ -375,7 +375,7 @@ def main():
             
                 Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu donc retenu que le type 'movie'.
             
-            
+
                 """
                 )
 
