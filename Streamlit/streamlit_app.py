@@ -75,7 +75,7 @@ def main():
 
         st.markdown(
         """
-        Notre cliente est Framboise de Papimcourt, petite fille du Comte de Montmirail. Elle a 25 ans et dirige un cinéma en perte de vitesse qui s'appelle "LE KINO".
+        Notre cliente est Framboise de Papincourt, petite fille du Comte de Montmirail. Elle a 25 ans et dirige un cinéma en perte de vitesse qui s'appelle "LE KINO".
 
         Elle fait appelle à nous car elle est désespérée. Son cinéma ne fait pas de bénéfice, ses créanciers sont à sa porte et ses problèmes financiers sont tels qu'elle a dû demandé un nouveau prêt dans une banque alors que c'est contre ses principes.
 
@@ -89,11 +89,58 @@ def main():
         Ainsi, elle nous donne carte blanche dans le rendu de notre travail.
         """  
         )    
+        st.subheader('')
+        st.subheader("Notre mission")
 
+        st.markdown(
+        """
+        Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
 
+        Nous devons :
+        - faire une rapide présentation de la base de données (sur notre Google Colab)
+        - fournir à notre client quelques statistiques sur les films :
+            * Films : types, durées...
+            * Acteurs : nombre de films, type de films...
+        - Présenter les TOP 10 des films par années et genre
+        - Présenter les TOP 5 des acteurs/actrices par années et genre
+        - Retourner une liste de films recommandés en fonction d'IDs ou de noms de films choisis par un utilisateur
 
+        - Il faudra entraîner des outils de Machine Learning : 
+	        * Recommandation de films proches d’un film cible grâce à un modèle de __KNN__
+	        * proposition d’une rétrospective avec un modèle de __Régression Logistique__
+        """
+        )
+        st.subheader('')
+        st.subheader("Outils")
 
+        st.markdown(
+        """
+        Le projet est entièrement fait sous **Python**.
 
+        Nous avons utilisés entres autres les librairies suivantes :    
+        - Pandas
+        - Sklearn
+        - Plotly
+        - Streamlit
+        """
+        )
+        st.subheader('')
+        st.subheader("Base de données")
+
+        st.markdown(
+        """
+        Comme énoncé ci-avant, notre client nous a fourni une base de données basée sur la plateforme IMDb. 
+        Nous pouvons les retrouver [**ici**](https://datasets.imdbws.com/), l'explicatif des datasets [**là**](https://www.imdb.com/interfaces/).
+
+        Nous laissons à dispositions notre analyse de ces bases de données sur Github dans notre espace collaboratif[**fichier colab**](https://COLLAB)
+        """
+        )
+
+######################################################################################
+######################################################################################
+###########################     BERENGER     #########################################
+######################################################################################
+######################################################################################
 
     if choice == 'Movie recommandation':
         st.subheader("Movie recommandation")
