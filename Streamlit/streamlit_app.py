@@ -73,7 +73,7 @@ def main():
 
         st.markdown(
         """
-        Le _PROJET ABC's_ est issu d’un projet d’école organisé par la __Wild Code School__. Il intervient dans le cadre de notre formation de Data Analyst, 2 mois après son début.
+        Le _PROJET ABC'S_ est issu d’un projet d’école organisé par la __Wild Code School__. Il intervient dans le cadre de notre formation de Data Analyst, 2 mois après son début.
 
         L’objectif de ce projet est le suivant :
 
@@ -389,7 +389,10 @@ def main():
         with col2:
             fig = go.Figure()
             for i in range(0, len(country_DF_fil.columns)):
-                sns.countplot(data = country_DF_fil, x= country_DF_fil.index, y= country_DF_fil.iloc[:, i], hue = country_DF_fil.columns[i], order = Films_by_Country_long.region.value_counts().iloc[:10].index)
+                px.bar(country_DF_fil, x= country_DF_fil.index, y= country_DF_fil.iloc[:, i], color = country_DF_fil.columns[i], order = Films_by_Country_long.region.value_counts().iloc[:10].index,
+            title = 'Palmarès de la distribution des oeuvres par pays ',
+            labels = {'region': 'Pays'},
+            width=800, height=600)
             st.plotly_chart(fig, use_container_width=True)
         if show:
             st.dataframe(country_DF)
