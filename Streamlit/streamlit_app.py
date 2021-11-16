@@ -365,7 +365,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = pd.read_csv('https://github.com/ALEMA86/Movie_Recommandation/blob/1a762d72237705ab107113e510945f0b9486e53b/Streamlit/countrydf.csv')
+        country_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/countrydf.csv')
         col1, col2 = st.columns([1, 2])
         with col1:
             st.title(' ')
@@ -379,7 +379,7 @@ def main():
                 )
 
         with col2:
-            fig = px.bar(data_frame = country_DF, x= "country", y="nb_mov", labels=dict(country="Pays", 	nb_mov="Nombre de films"))
+            fig = px.bar(data_frame = country_DF, x= "country", y="nb_mov", labels=dict(country="Pays", nb_mov ="Nombre de films"))
             fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
             st.plotly_chart(fig)
