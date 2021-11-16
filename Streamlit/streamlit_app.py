@@ -95,14 +95,11 @@ def main():
         st.markdown(
         """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
-        """
-        )
-
-        st.markdown(
-        """        
+               
         Nous devons :
-        - faire une rapide présentation de la base de données (sur notre Google Colab)
-        - fournir à notre client quelques statistiques sur les films :
+
+        - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
+        - Fournir à notre client quelques statistiques sur les films :
             - Films : types, durées...
             - Acteurs : nombre de films, type de films...
         - Présenter les TOP 10 des films par années et genre
