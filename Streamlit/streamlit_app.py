@@ -97,19 +97,20 @@ def main():
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
         """
         )
+
         st.markdown(
         """        
         Nous devons :
         - faire une rapide présentation de la base de données (sur notre Google Colab)
         - fournir à notre client quelques statistiques sur les films :
-            * Films : types, durées...
-            * Acteurs : nombre de films, type de films...
+            - Films : types, durées...
+            - Acteurs : nombre de films, type de films...
         - Présenter les TOP 10 des films par années et genre
         - Présenter les TOP 5 des acteurs/actrices par années et genre
         - Retourner une liste de films recommandés en fonction d'IDs ou de noms de films choisis par un utilisateur
         - Il faudra entraîner des outils de Machine Learning : 
-	        * Recommandation de films proches d’un film cible grâce à un modèle de __KNN__
-	        * proposition d’une rétrospective avec un modèle de __Régression Logistique__
+	        - Recommandation de films proches d’un film cible grâce à un modèle de __KNN__
+	        - Proposition d’une rétrospective avec un modèle de __Régression Logistique__
         """
         )
 
