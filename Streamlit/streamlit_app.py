@@ -25,7 +25,7 @@ from sklearn.neighbors import NearestNeighbors
 
 df_recommandation = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_recommendation.csv?token=AU6BUZUA5UESEPKRRJQIESLBS53UU')
 df = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_base.csv?token=AU6BUZWHN456IAMFBUWFFSDBTELCU')
-country = pd.read_csv('https://github.com/ALEMA86/Movie_Recommandation/blob/79c19f676e356c1048fdb05d2b92574847b51960/Streamlit/Country.csv')
+
 ######################################################################################
 ######################################################################################
 ###########################     FONCTIONS    #########################################
@@ -365,7 +365,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = load_df(country)
+        country_DF = pd.read_csv('https://github.com/ALEMA86/Movie_Recommandation/blob/79c19f676e356c1048fdb05d2b92574847b51960/Streamlit/Country.csv')
         col1, col2 = st.columns([1, 2])
         with col1:
             st.title(' ')
@@ -375,26 +375,15 @@ def main():
             
                 Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu 2 types de films : les 'movie' et les 'tvMovie'.
             
-                Il est cependant possible via le filtre ci-dessous de séparer ces 2 items afin de voir dans quels pays il y a le plus de 'movie de distribués, ou bien de 'tvMovie':
                 """
             )
-            filter_type = st.multiselect(label='Selectionnez les types ?', options=list(country_DF.columns), default=['movie', 'tvMovie'], help="Seuls les 'movie' et 'tvMovie' ont été repris dans notre dataset pour des raisons d'hébergement des csv sur github.")
-    
-        country_DF_fil = pd.DataFrame(index=country_DF.index)
-        for col in filter_type:
-            if col in country_DF.columns:
-                country_DF_fil[col] = country_DF[col]
 
         with col2:
-            fig = go.Figure()
-            for i in range(0, len(country_DF_fil.columns)):
-                px.bar(country_DF_fil, x= country_DF_fil.index, y= country_DF_fil.iloc[:, i], color = country_DF_fil.columns[i], order = Films_by_Country_long.region.value_counts().iloc[:10].index,
+            px.bar(country_DF, x= 'region', color = 'titleType', order = country_DF.region.value_counts().iloc[:10].index,
             title = 'Palmarès de la distribution des oeuvres par pays ',
             labels = {'region': 'Pays'},
             width=800, height=600)
-            st.plotly_chart(fig, use_container_width=True)
-        if show:
-            st.dataframe(country_DF)
+
 
 
 
