@@ -95,7 +95,7 @@ def main():
         st.markdown(
         """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
-        
+
         Il est nécessaire de :
         - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
         - Fournir à notre client quelques statistiques sur les films :
