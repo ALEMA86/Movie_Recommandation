@@ -365,7 +365,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = pd.read_csv('https://github.com/BerengerQueune/ABC-Data/blob/e0e17dc69b01056a102fcb237f62b00959185112/Aurore/KPI/Country.csv')
+        country_DF = pd.read_csv('https://github.com/ALEMA86/Movie_Recommandation/blob/1a762d72237705ab107113e510945f0b9486e53b/Streamlit/countrydf.csv')
         col1, col2 = st.columns([1, 2])
         with col1:
             st.title(' ')
@@ -373,13 +373,16 @@ def main():
                 """
                 Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
             
-                Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu 2 types de films : les 'movie' et les 'tvMovie'.
+                Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu donc retenu que le type 'movie'.
             
                 """
-            )
+                )
 
         with col2:
-            country_DF['region'].value_counts().head(15).plot.bar()
+            fig = px.bar(data_frame = country_DF, x= "country", y="nb_mov", labels=dict(country="Pays", 	nb_mov="Nombre de films"))
+            fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
+
+            st.plotly_chart(fig)
 
 
 
