@@ -393,17 +393,17 @@ def main():
         col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
-            moyenne_genre = pd.pivot_table(FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
+            moyenne_genre = pd.pivot_table(FULL_DF, values="averageRating", columns="genre1", aggfunc=np.mean)
  
             # Plot a bar chart using the DF
-            ax = moyenne_genre.plot(kind="bar")
+            ax = moyenne_genre.plot(kind="barh")
             # Get a Matplotlib figure from the axes object for formatting purposes
             fig = ax.get_figure()
             # Change the plot dimensions (width, height)
             fig.set_size_inches(7, 6)
             # Change the axes labels
-            ax.set_xlabel("Years")
-            ax.set_ylabel("Average Page Views")
+            ax.set_xlabel("Note moyenne par genre")
+            ax.set_ylabel("Genres de 1er rang")
 
             plt.show()
 
@@ -412,14 +412,14 @@ def main():
             nb_moyen_vote = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
 
             # Plot a bar chart using the DF
-            ax = nb_moyen_vote.plot(kind="bar")
+            ax = nb_moyen_vote.plot(kind="barh")
             # Get a Matplotlib figure from the axes object for formatting purposes
             fig = ax.get_figure()
             # Change the plot dimensions (width, height)
             fig.set_size_inches(7, 6)
             # Change the axes labels
-            ax.set_xlabel("Years")
-            ax.set_ylabel("Average Page Views")
+            ax.set_xlabel("Nombre moyen de votes")
+            ax.set_ylabel("Genres de 1er rang")
 
             plt.show()
 
