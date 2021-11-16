@@ -96,8 +96,11 @@ def main():
         """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
                
-        Nous devons :
-
+        Il est nécessaire de :
+        - Pandas
+        - Sklearn
+        - Plotly
+        - Streamlit
         - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
         - Fournir à notre client quelques statistiques sur les films :
             - Films : types, durées...
