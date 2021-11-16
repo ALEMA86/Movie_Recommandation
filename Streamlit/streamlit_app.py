@@ -387,6 +387,24 @@ def main():
 
 
 
+        df = px.data.gapminder().query("year==2007")
+        fig = go.Figure(data=go.Choropleth(locations=country_DF.index,z=country_DF['nb_mov'],text=country_DF['country'],colorscale=px.colors.sequential.Sunsetdark,autocolorscale=False,reversescale=False,marker_line_color='darkgray',marker_line_width=0.5,colorbar_title='Nombre de films',))
+        
+        fig.update_layout(dragmode=False, title_text='<b> Distribution des films selon les pays </b>', margin=dict(l=40, r=40, b=40, t=40),
+        geo=dict(showframe=False,showcoastlines=False,projection_type='natural earth'))
+    fig.update_geos(bgcolor='rgba(0,0,0,0)')
+
+    if show:
+        col1, col2 = st.beta_columns([3, 1])
+        with col1:
+            st.plotly_chart(fig, use_container_width=True)
+        with col2:
+            st.title(' ')
+            st.dataframe(country, height=360)
+    else:
+        st.plotly_chart(fig, use_container_width=True)
+
+
 
 
 main()
