@@ -110,6 +110,7 @@ def main():
 	        * proposition d’une rétrospective avec un modèle de __Régression Logistique__
         """
         )
+
         st.subheader('')
         st.subheader("Outils")
 
@@ -124,6 +125,7 @@ def main():
         - Streamlit
         """
         )
+        
         st.subheader('')
         st.subheader("Base de données")
 
