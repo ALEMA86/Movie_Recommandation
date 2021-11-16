@@ -423,13 +423,9 @@ def main():
             plt.show()
 
 
-            fig = px.bar(FULL_DF, x="numVotes", y ='genre1', color = 'index',aggfunc=np.mean,
-            title = 'Quels sont les acteurs les plus présents ?',
-            labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
-            width=800, height=600)
-
+        fig = px.bar(FULL_DF, x="numVotes", y ='genre1', color = 'index',aggfunc=np.mean,
+        title = 'Quels sont les acteurs les plus présents ?',labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'}, width=800, height=600)
         fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-
         st.plotly_chart(fig)
 
 
