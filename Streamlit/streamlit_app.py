@@ -365,7 +365,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = pd.read_csv('https://github.com/ALEMA86/Movie_Recommandation/blob/79c19f676e356c1048fdb05d2b92574847b51960/Streamlit/Country.csv')
+        country_DF = pd.read_csv('https://github.com/BerengerQueune/ABC-Data/blob/e0e17dc69b01056a102fcb237f62b00959185112/Aurore/KPI/Country.csv')
         col1, col2 = st.columns([1, 2])
         with col1:
             st.title(' ')
