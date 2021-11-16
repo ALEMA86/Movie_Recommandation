@@ -95,7 +95,6 @@ def main():
         st.markdown(
         """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de __IMDB__.
-
         Nous devons :
         - faire une rapide présentation de la base de données (sur notre Google Colab)
         - fournir à notre client quelques statistiques sur les films :
@@ -125,7 +124,7 @@ def main():
         - Streamlit
         """
         )
-        
+
         st.subheader('')
         st.subheader("Base de données")
 
