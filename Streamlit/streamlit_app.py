@@ -31,6 +31,7 @@ def main():
 ######################################################################################
     if choice == "Présentation du Projet":
         st.title("Présentation du Projet")
+        st.subheader('')
         st.subheader("Le Projet")
 
         st.markdown(
@@ -45,11 +46,25 @@ def main():
 
         Aucun client du cinéma n'ayant à ce jour renseigné ses préférences, nous sommes donc dans une situation de __cold start__. Cependant, notre client nous a fourni une base de données basée sur la plateforme IMDb.
 
-
-
         """
         )
+        st.subheader('')
+        st.subheader("L'équipe")
 
+        st.markdown(
+        """
+        Notre équipe est composée de 4 élèves issus de la promo Data Green de la __Wild Code School__ :
+        - [Aurore LEMAÎTRE](https://github.com/alema86)
+        - [Bérenger QUEUNE](https://github.com/BerengerQueune)
+        - [Christophe LEFEBVRE](https://github.com/clefebvre2021)
+        - [Stéphane ESSOUMAN](https://github.com/Liostephe)
+
+        Tous les quatre formons l'équipe ABC's Data.
+
+        ![logo_team](./210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png)
+
+        """
+        )        
 
 
 
