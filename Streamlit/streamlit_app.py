@@ -379,10 +379,7 @@ def main():
             )
 
         with col2:
-            px.bar(country_DF, x= 'region', color = 'titleType', order = country_DF.region.value_counts().iloc[:10].index,
-            title = 'Palmarès de la distribution des oeuvres par pays ',
-            labels = {'region': 'Pays'},
-            width=800, height=600)
+            country_DF['region'].value_counts().head(15).plot.bar()
 
 
 
