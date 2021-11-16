@@ -381,7 +381,7 @@ def main():
         with col2:
             fig = px.bar(data_frame = country_DF, x= "country", y="nb_mov", labels=dict(country="Pays", nb_mov ="Nombre de films"))
             fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
-            set_yticks([0,62000])
+            fig.set_yticks([0,62000])
             st.plotly_chart(fig)
 
 
