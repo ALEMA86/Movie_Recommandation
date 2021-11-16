@@ -60,11 +60,13 @@ def main():
         - [Stéphane ESSOUMAN](https://github.com/Liostephe)
 
         Tous les quatre formons l'équipe ABC's Data.
-
-        st.image('https://github.com/ALEMA86/Movie_Recommandation/blob/main/Streamlit/210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png')
-
         """
-        )        
+        )
+        col1, col2, col3 = st.beta_columns(3)
+        with col2:
+            st.image('https://github.com/ALEMA86/Movie_Recommandation/blob/main/Streamlit/210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png')
+
+                
 
 
 
