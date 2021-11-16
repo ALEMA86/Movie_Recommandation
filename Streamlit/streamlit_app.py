@@ -360,39 +360,39 @@ def main():
 
         st.plotly_chart(fig)
 
-######################################################################################
-######################################################################################
-###########################     AURORE     ###########################################
-######################################################################################
-######################################################################################
+        ######################################################################################
+        ######################################################################################
+        ###########################     AURORE     ###########################################
+        ######################################################################################
+        ######################################################################################
 
-country_DF = load_df(country)
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        st.title(' ')
-        st.markdown(
-            """
-            Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
+        country_DF = load_df(country)
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.title(' ')
+            st.markdown(
+                """
+                Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
             
-            Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu 2 types de films : les 'movie' et les 'tvMovie'.
+                Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu 2 types de films : les 'movie' et les 'tvMovie'.
             
-            Il est cependant possible via le filtre ci-dessous de séparer ces 2 items afin de voir dans quels pays il y a le plus de 'movie de distribués, ou bien de 'tvMovie':
-            """
-        )
-        filter_type = st.multiselect(label='Selectionnez les types ?', options=list(country_DF.columns), default=['movie', 'tvMovie'], help="Seuls les 'movie' et 'tvMovie' ont été repris dans notre dataset pour des raisons d'hébergement des csv sur github.")
+                Il est cependant possible via le filtre ci-dessous de séparer ces 2 items afin de voir dans quels pays il y a le plus de 'movie de distribués, ou bien de 'tvMovie':
+                """
+            )
+            filter_type = st.multiselect(label='Selectionnez les types ?', options=list(country_DF.columns), default=['movie', 'tvMovie'], help="Seuls les 'movie' et 'tvMovie' ont été repris dans notre dataset pour des raisons d'hébergement des csv sur github.")
     
-    country_DF_fil = pd.DataFrame(index=country_DF.index)
-    for col in filter_type:
-        if col in country_DF.columns:
-            country_DF_fil[col] = country_DF[col]
+        country_DF_fil = pd.DataFrame(index=country_DF.index)
+        for col in filter_type:
+            if col in country_DF.columns:
+                country_DF_fil[col] = country_DF[col]
 
-    with col2:
-        fig = go.Figure()
-        for i in range(0, len(country_DF_fil.columns)):
-          sns.countplot(data = country_DF_fil, x= country_DF_fil.index, y= country_DF_fil.iloc[:, i], hue = country_DF_fil.columns[i], order = Films_by_Country_long.region.value_counts().iloc[:10].index)
-        st.plotly_chart(fig, use_container_width=True)
-    if show:
-        st.dataframe(country_DF)
+        with col2:
+            fig = go.Figure()
+            for i in range(0, len(country_DF_fil.columns)):
+                sns.countplot(data = country_DF_fil, x= country_DF_fil.index, y= country_DF_fil.iloc[:, i], hue = country_DF_fil.columns[i], order = Films_by_Country_long.region.value_counts().iloc[:10].index)
+            st.plotly_chart(fig, use_container_width=True)
+        if show:
+            st.dataframe(country_DF)
 
 
 
