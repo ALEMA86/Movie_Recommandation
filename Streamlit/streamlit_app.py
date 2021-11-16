@@ -25,6 +25,7 @@ from sklearn.neighbors import NearestNeighbors
 
 df_recommandation = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_recommendation.csv?token=AU6BUZUA5UESEPKRRJQIESLBS53UU')
 df = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_base.csv?token=AU6BUZWHN456IAMFBUWFFSDBTELCU')
+FULL_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/DF_FULL_KPI.csv')
 
 ######################################################################################
 ######################################################################################
@@ -386,9 +387,12 @@ def main():
 
 
 
+        fig = px.bar(FULL_DF, x="numVotes", y ='genre1', color = 'index',aggfunc=np.mean,
+        title = 'Quels sont les acteurs les plus présents ?',labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'}, width=800, height=600)
+        fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+        st.plotly_chart(fig)
 
-
-        FULL_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/DF_FULL_KPI.csv')
+        
         col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
@@ -423,10 +427,7 @@ def main():
             plt.show()
 
 
-        fig = px.bar(FULL_DF, x="numVotes", y ='genre1', color = 'index',aggfunc=np.mean,
-        title = 'Quels sont les acteurs les plus présents ?',labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'}, width=800, height=600)
-        fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-        st.plotly_chart(fig)
+
 
 
 main()
