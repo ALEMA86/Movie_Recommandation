@@ -64,7 +64,7 @@ def main():
         )
         col1, col2, col3 = st.columns(3)
         with col2:
-            st.image("https://github.com/ALEMA86/Movie_Recommandation/blob/c4eefae01a726f8223a9722378c6bde0a97f5d10/Streamlit/210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png")
+            st.image("https://d1qg2exw9ypjcp.cloudfront.net/assets/prod/24134/210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png")
 
                 
 
