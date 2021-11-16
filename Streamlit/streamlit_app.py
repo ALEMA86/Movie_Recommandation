@@ -388,6 +388,41 @@ def main():
 
 
 
+        FULL_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/DF_FULL_KPI.csv')
+        col1, col2 = st.columns([1, 1])
+        with col1:
+            st.title('Note moyenne par genre de films')
+            moyenne_genre = pd.pivot_table(FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
+ 
+            # Plot a bar chart using the DF
+            ax = moyenne_genre.plot(kind="bar")
+            # Get a Matplotlib figure from the axes object for formatting purposes
+            fig = ax.get_figure()
+            # Change the plot dimensions (width, height)
+            fig.set_size_inches(7, 6)
+            # Change the axes labels
+            ax.set_xlabel("Years")
+            ax.set_ylabel("Average Page Views")
+
+            plt.show()
+
+        with col2:
+            st.title('Nombre moyen de votes par genre')
+            nb_moyen_vote = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
+
+            # Plot a bar chart using the DF
+            ax = nb_moyen_vote.plot(kind="bar")
+            # Get a Matplotlib figure from the axes object for formatting purposes
+            fig = ax.get_figure()
+            # Change the plot dimensions (width, height)
+            fig.set_size_inches(7, 6)
+            # Change the axes labels
+            ax.set_xlabel("Years")
+            ax.set_ylabel("Average Page Views")
+
+            plt.show()
+
+
 
 main()
 
