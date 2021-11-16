@@ -89,7 +89,8 @@ def main():
         Faire du bénéfice à terme serait un plus, car ça lui permettrait d'offrir à ses futurs enfants Harmony, Safran et Kiwi un environnement dans lequel ils pourront s'épanouir comme elle en rêve.
 
         Ainsi, elle nous donne carte blanche dans le rendu de notre travail.
-        """      
+        """  
+        )    
 
 
 
