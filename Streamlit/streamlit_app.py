@@ -24,6 +24,37 @@ def main():
 
     choice = st.sidebar.selectbox("Menu", menu) 
 
+######################################################################################
+######################################################################################
+###########################     AURORE     ###########################################
+######################################################################################
+######################################################################################
+    if choice == "Présentation du Projet":
+        st.title("Présentation du Projet")
+        st.subheader("Le Projet")
+
+        st.markdown(
+        """
+        Le _PROJET ABC's_ est issu d’un projet d’école organisé par la __Wild Code School__. Il intervient dans le cadre de notre formation de Data Analyst, 2 mois après son début.
+
+        L’objectif de ce projet est le suivant :
+
+        Nous sommes une équipe de Data Analysts freelance.
+        Un cinéma en perte de vitesse situé dans la Creuse nous contacte ca rl a décidé de passer le cap du digital en créant un site Internet taillé pour les locaux.
+        Notre client nous demande de créer un moteur de recommandations de films qui à terme, enverra des notifications via internet.
+
+        Aucun client du cinéma n'ayant à ce jour renseigné ses préférences, nous sommes donc dans une situation de __cold start__. Cependant, notre client nous a fourni une base de données basée sur la plateforme IMDb.
+
+
+
+        """
+        )
+
+
+
+
+
+
 
     if choice == 'Movie recommandation':
         st.subheader("Movie recommandation")
