@@ -272,6 +272,8 @@ def main():
         )
         st.write(' ')
         st.write(' ')
+        st.write(' ')
+        st.write(' ')
         #######################################
         ########    GRAPHIQUES     ############
         #######################################
@@ -280,7 +282,7 @@ def main():
         ########  Q01 -Christophe  ############
         st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
-        
+
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
@@ -305,8 +307,8 @@ def main():
             )
 
         with col2:
-            top10_graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma, title = 'Palmarès des pays selon la distribution des oeuvres cinématographiques', width=700, height=500, template='plotly_dark')
-
+            top10_graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma)
+            fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
             st.plotly_chart(top10_graph)
 
         
