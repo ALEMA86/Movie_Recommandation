@@ -305,22 +305,20 @@ def main():
         st.title("Projet : recommandations de films")  # add a title
 
         st.write("Comme énoncé dans notre partie 'Présentation du Projet', il nous est demandé de :")
-        st.write("- Faire une rapide présentation de la base de données (que vous pouvez retrouver [ici](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/Analyses_BDD_Etape%201.ipynb))")
-        st.write("- Faire une analyse complète de la base de données, en répondant aux questions suivantes :")
-        st.write("      - Quels sont les pays qui produisent le plus de films ?")
-        st.write("      - Quels sont les acteurs les plus présents ? À quelle période ?")
-        st.write("      - La durée moyenne des films s’allonge ou se raccourcit avec les années ?")
-        st.write("      - Les acteurs de série sont-ils les mêmes qu’au cinéma ? ")
-        st.write("      - Les acteurs ont en moyenne quel âge ? ")
-        st.write("      - Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?")
+        st.markdown(
+        """
+        - Faire une rapide présentation de la base de données (que vous pouvez retrouver [ici](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/Analyses_BDD_Etape%201.ipynb))
+        - Faire une analyse complète de la base de données, en répondant aux questions suivantes :
+        - Quels sont les pays qui produisent le plus de films ?
+        - Quels sont les acteurs les plus présents ? À quelle période ?
+        - La durée moyenne des films s’allonge ou se raccourcit avec les années ?
+        - Les acteurs de série sont-ils les mêmes qu’au cinéma ? 
+        - Les acteurs ont en moyenne quel âge ? 
+        - Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?
+        """
+        )
 
-        st.write("Pour commencer, nous devons explorer la base de données afin de répondre aux questions suivantes :")
-        st.write("- Quels sont les pays qui produisent le plus de films ?")
-        st.write("- Quels sont les acteurs les plus présents ? À quelle période ?")
-        st.write("- La durée moyenne des films s’allonge ou se raccourcit avec les années ?")
-        st.write("- Les acteurs de série sont-ils les mêmes qu’au cinéma ?")
-        st.write("- Les acteurs ont en moyenne quel âge ?")
-        st.write("- Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?")
+
 
 
         fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
