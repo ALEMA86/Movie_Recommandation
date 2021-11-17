@@ -482,36 +482,7 @@ def main():
 
 
 
-        ######################
-        fig = make_subplots(rows=2, cols=2)
 
-        fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),
-                    row=1, col=1)
-
-        fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),
-                    row=1, col=2)
-
-        fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),
-                    row=2, col=1)
-
-        fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),
-                    row=2, col=2)
-
-        fig.update_xaxes(title_text="", row=1, col=1)
-        fig.update_yaxes(title_text="", row=1, col=1)
-
-        fig.update_xaxes(title_text="", row=1, col=2)
-        fig.update_yaxes(title_text="", row=1, col=2, range=[80, 100])
-
-        fig.update_xaxes(title_text="", row=1, col=1)
-        fig.update_yaxes(title_text="", row=2, col=1, range=[50, 100])
-
-        fig.update_xaxes(title_text="", row=1, col=2)
-        fig.update_yaxes(title_text="", row=2, col=2, range=[0, 100])
-
-        fig.update_layout(height=1000, width=1400, title_text="Evolution de la durée des films en minutes depuis 1960", title_x=0.5, showlegend=False, template='plotly_dark', autosize=False)
-
-        st.plotly_chart(fig)
         ######################
 
 
