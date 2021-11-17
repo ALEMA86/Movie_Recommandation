@@ -284,9 +284,9 @@ def main():
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
 
         col1, col2 = st.columns([1, 2])
-            with col1:
-                st.write(' ')
-                st.markdown(
+        with col1:
+            st.write(' ')
+            st.markdown(
                 """
                 Le dataset a été élaboré à partir de deux fichiers : title.basics et title.akas.
 
@@ -306,20 +306,21 @@ def main():
                 """
                 )
 
-            with col2:
+        with col2:
             #top10_graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma)
             #fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
             #st.plotly_chart(top10_graph)
 
-        
-        st.markdown(
+        col1 = st.columns([1, 1])
+        with col1:
+            st.markdown(
             """
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
                 On note également que trois des 5 continents sont représentés dans le top10.
                 La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
             """
-        )
+            )
 
 
 
