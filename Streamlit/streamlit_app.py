@@ -280,7 +280,8 @@ def main():
 
 
         ########  Q01 -Christophe  ############
-        st.subheader("Quels sont les pays qui distribuent le plus de films ?") st.image("https://i.ibb.co/bHkZJb7/B-mod.png")# add a subtitle
+        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
+        
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
 
         col1, col2 = st.columns([1, 2])
