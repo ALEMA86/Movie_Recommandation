@@ -442,10 +442,8 @@ def main():
             Genres = moyenne_genre_unstacked.index
             moyenne = moyenne_genre_unstacked['averageRating']
 
-            fig2 = plt.barh(Genres,moyenne)
-            plt.title('Note moyenne par genre de films ')
-            plt.ylabel('Genres')
-            plt.xlabel('Note moyenne')
+            fig2.update_layout(title_text='Note moyenne par genre de films', title_x=0.5, width=1000, height=600, template='plotly_dark')
+            st.plotly_chart(fig2)
             st.plotly_chart(fig2)
 
         with col2:
