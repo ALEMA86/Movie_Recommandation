@@ -381,7 +381,7 @@ def main():
                 Nous avons nettoyé la base de données de la façon suivante :
                 - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
                     - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
-                    - dans la colonne 'character', nous avons supprimé les st.latex(r''''\N''''), les 'Narrator', 'Various' et 'Additional Voices'
+                    - dans la colonne 'character', nous avons supprimé les "/N", les 'Narrator', 'Various' et 'Additional Voices'
                 - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
