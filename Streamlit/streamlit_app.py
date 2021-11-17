@@ -340,7 +340,22 @@ def main():
             st.title(' ')
             st.markdown(
                 """
+                Le dataset a été élaboré à partir de deux fichiers : title.basics et title.akas.
 
+                Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
+
+                Ainsi, à partir de title.basics, il a été choisi de ne retenir que les films ('movie') et téléfilms ('tvMovie) réalisés après 1960, limitant notre périmètre d’analyse aux films les plus récents. Les courts-métrages (“short”) ont également été retirés.
+                Les lignes n'ayant pas de données pour les items suivants ont été supprimées de notre DataFrame: année de réalisation ('startYear'), de durée ('runtimeMinutes') ou de genres ('genres').
+
+                De la même façon, les films qui n’ont pas de région dans le fichiers title.akas ont été supprimés.
+
+                Une jointure a été réalisée entre les deux DataFrame afin d’ajouter la région aux colonnes de la base de données title.basics.
+
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO') reprenant  le top 10 des pays ayant distribué le plus de films et téléfilms a été produit.
+
+                [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
+
+                """
                 )
 
         with col2:
@@ -350,12 +365,12 @@ def main():
 
         
         st.markdown(
-                """
+            """
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
                 On note également que trois des 5 continents sont représentés dans le top10.
                 La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
-                """
+            """
             )
 
 
