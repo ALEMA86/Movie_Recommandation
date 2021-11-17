@@ -311,10 +311,8 @@ def main():
             #fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
             #st.plotly_chart(top10_graph)
 
-        col1 = st.columns([1, 1])
-        with col1:
-            st.markdown(
-            """
+        with st.expander("Commentaires"):
+            st.write("""
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
                 On note également que trois des 5 continents sont représentés dans le top10.
