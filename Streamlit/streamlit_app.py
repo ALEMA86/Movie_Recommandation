@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 df_recommandation = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_recommendation.csv?token=AU6BUZUA5UESEPKRRJQIESLBS53UU')
 df = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/df_base.csv?token=AU6BUZWHN456IAMFBUWFFSDBTELCU')
-FULL_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/DF_FULL_KPI.csv')
+FULL_DF = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULLv20211117.csv?token=AUTGRH5HNBOJT57XFLMNQIDBTYHI4')
 
 ######################################################################################
 ######################################################################################
@@ -97,7 +97,7 @@ def main():
         - [Christophe LEFEBVRE](https://github.com/clefebvre2021)
         - [Stéphane ESSOUMAN](https://github.com/Liostephe)
 
-        Tous les quatre formons l'équipe ABC's Data.
+        Tous les quatre formons l'équipe ABC'S Data.
         """
         )
         col1, col2, col3 = st.columns(3)
@@ -280,11 +280,11 @@ def main():
 
         st.write(liste_finale[["primaryTitle", "startYear"]])
                 
-
-
-    
-
-    
+######################################################################################
+######################################################################################
+###########################     AURORE     ###########################################
+######################################################################################
+######################################################################################   
 
 
 
@@ -433,7 +433,7 @@ def main():
         col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
-            moyenne_genre = pd.pivot_table(	FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
+            moyenne_genre = pd.pivot_table(FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
             moyenne_genre_unstacked = moyenne_genre.unstack().unstack()
             moyenne_genre_unstacked =moyenne_genre_unstacked.sort_values('averageRating')
 
