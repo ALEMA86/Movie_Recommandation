@@ -134,6 +134,7 @@ def main():
         """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de **IMDB**.
         Il nous est demandé de :
+        
         - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
         - Fournir à notre client quelques statistiques sur les films :
             * Films : types, durées...
