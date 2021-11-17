@@ -270,7 +270,8 @@ def main():
             * Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?
         """
         )
-
+        st.write(' ')
+        st.write(' ')
         #######################################
         ########    GRAPHIQUES     ############
         #######################################
@@ -279,7 +280,7 @@ def main():
         ########  Q01 -Christophe  ############
         st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
-
+        
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
