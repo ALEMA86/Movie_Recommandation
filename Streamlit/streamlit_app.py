@@ -325,7 +325,7 @@ def main():
         ########  Q02 -Bérenger  ############
         st.subheader("Quels sont les acteurs les plus présents ?") # add a subtitle
         with st.expander("."):
-...     st.write("""Bérenger""")
+            st.write("""Bérenger""")
         presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
 
         col1, col2 = st.columns([2, 1])
