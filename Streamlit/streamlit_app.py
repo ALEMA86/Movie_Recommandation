@@ -280,7 +280,7 @@ def main():
 
 
         ########  Q01 -Christophe  ############
-        st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
+        st.subheader("Quels sont les pays qui distribuent le plus de films ?") st.image("https://i.ibb.co/bHkZJb7/B-mod.png")# add a subtitle
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
 
         col1, col2 = st.columns([1, 2])
@@ -324,8 +324,7 @@ def main():
         st.write(' ')
         ########  Q02 -Bérenger  ############
         st.subheader("Quels sont les acteurs les plus présents ?") # add a subtitle
-        with st.expander("."):
-            st.write("""Bérenger""")
+ 
         presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
 
         col1, col2 = st.columns([2, 1])
