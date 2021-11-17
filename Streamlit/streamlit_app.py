@@ -139,12 +139,12 @@ def main():
         )
         st.markdown(
         """ 
-        -Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
+        - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
         """
         )
         st.markdown(
         """ 
-        -Fournir à notre client quelques statistiques sur les films :
+        - Fournir à notre client quelques statistiques sur les films :
         """
         )
         st.markdown(
@@ -159,12 +159,12 @@ def main():
         )
         st.markdown(
         """ 
-        -Présenter les TOP 10 des films par années et genre
+        - Présenter les TOP 10 des films par années et genre
         """
         )
         st.markdown(
         """ 
-        -Présenter les TOP 5 des acteurs/actrices par années et genre
+        - Présenter les TOP 5 des acteurs/actrices par années et genre
         """
         )
         st.markdown(
@@ -174,7 +174,7 @@ def main():
         )
         st.markdown(
         """ 
-        -Il faudra entraîner des outils de Machine Learning : 
+        - Il faudra entraîner des outils de Machine Learning : 
         """
         )
         st.markdown(
