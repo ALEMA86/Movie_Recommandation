@@ -442,27 +442,27 @@ def main():
             Genres = moyenne_genre_unstacked.index
             moyenne = moyenne_genre_unstacked['averageRating']
 
-            plt.barh(Genres,moyenne)
+            fig2 = plt.barh(Genres,moyenne)
             plt.title('Note moyenne par genre de films ')
             plt.ylabel('Genres')
             plt.xlabel('Note moyenne')
-            plt.show()
+            st.plotly_chart(fig2)
 
         with col2:
             st.title('Nombre moyen de votes par genre')
-            nb_moyen_vote = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
+            nb_moyen_votes = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
+            nb_moyen_votes_unstacked = nb_moyen_votes.unstack().unstack()
+            nb_moyen_votes_unstacked = nb_moyen_votes_unstacked.sort_values('numVotes').round()
 
-            # Plot a bar chart using the DF
-            ax = nb_moyen_vote.plot(kind="barh")
-            # Get a Matplotlib figure from the axes object for formatting purposes
-            fig = ax.get_figure()
-            # Change the plot dimensions (width, height)
-            fig.set_size_inches(7, 6)
-            # Change the axes labels
-            ax.set_xlabel("Nombre moyen de votes")
-            ax.set_ylabel("Genres de 1er rang")
+            genres = nb_moyen_votes_unstacked.index
+            nb_votes = nb_moyen_votes_unstacked['numVotes']
 
-            plt.show()
+            fig3 = plt.barh(genres,nb_votes)
+            plt.title('Nombre moyen de votes par genre')
+            plt.ylabel('Genres')
+            plt.xlabel('Nombre de votes')
+            st.plotly_chart(fig3)
+            
 
 
 
