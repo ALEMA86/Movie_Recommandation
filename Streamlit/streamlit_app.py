@@ -307,7 +307,7 @@ def main():
                 )
 
         with col2:
-            top10Graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma)
+            top10Graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films")
             top10Graph.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
             st.plotly_chart(top10Graph)
 
