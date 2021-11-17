@@ -281,7 +281,7 @@ def main():
 
         ########  Q01 -Christophe  ############
         st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
-        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
+
 
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
 
@@ -314,6 +314,7 @@ def main():
             st.plotly_chart(top10Graph)
 
         st.write("")
+        st.image("https://i.ibb.co/NV1RFNH/C-mod.png") 
         st.markdown("""
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.               
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
@@ -361,6 +362,7 @@ def main():
             st.plotly_chart(fig)
 
         st.write("")
+        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
         st.markdown("""
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
@@ -407,6 +409,7 @@ def main():
         st.plotly_chart(fig)
 
         st.write("")
+        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
         st.markdown("""
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
