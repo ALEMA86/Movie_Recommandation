@@ -393,14 +393,14 @@ def main():
                 )
 
         with col2:
-        fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
+            fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
             title = 'Quels sont les acteurs les plus présents ?',
             labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
             width=800, height=600)
 
-        fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
 
-        st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
         st.write("")
         st.markdown("""
