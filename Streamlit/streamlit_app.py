@@ -457,12 +457,11 @@ def main():
             genres = nb_moyen_votes_unstacked.index
             nb_votes = nb_moyen_votes_unstacked['numVotes']
 
-            fig3 = plt.barh(genres,nb_votes)
-            plt.title('Nombre moyen de votes par genre')
-            plt.ylabel('Genres')
-            plt.xlabel('Nombre de votes')
+            fig3 = px.bar(data_frame = FULL_DF, x= genres, y= nb_votes)
+            fig3.update_layout(title_text="Nombre moyen de votes par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             st.plotly_chart(fig3)
-            
+        
+
 
 
 
