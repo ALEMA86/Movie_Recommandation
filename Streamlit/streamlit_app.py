@@ -138,6 +138,7 @@ def main():
         st.markdown(
         """        
         Il nous est demandé de :
+        
         - Faire une rapide présentation de la base de données (sur notre espace collaboratif sur Github)
         - Fournir à notre client quelques statistiques sur les films :
             * Films : types, durées...
