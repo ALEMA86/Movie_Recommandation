@@ -430,11 +430,9 @@ def main():
 
 
         
-        col1, col2 = st.columns([1, 1])
+        col1, col2 = st.columns([1, 2])
         with col1:
             st.title('Note moyenne par genre de films')
-            # Note moyenne par genre de films 
-
             moyenne_genre = pd.pivot_table(	FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
             moyenne_genre_unstacked = moyenne_genre.unstack().unstack()
             moyenne_genre_unstacked =moyenne_genre_unstacked.sort_values('averageRating')
@@ -444,7 +442,7 @@ def main():
 
             fig = px.bar(moyenne_genre_unstacked, x=Genres, y =moyenne, color = nb_moyen_votes_unstacked.index,title = 'Note moyenne par genre de films ',width=400, height=300)
             fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            st.plotly_chart(fig
+            st.plotly_chart(fig)
 
         with col2:
             st.title('Nombre moyen de votes par genre')
