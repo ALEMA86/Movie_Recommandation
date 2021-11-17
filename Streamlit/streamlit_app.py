@@ -309,12 +309,12 @@ def main():
         """
         - Faire une rapide présentation de la base de données (que vous pouvez retrouver [ici](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/Analyses_BDD_Etape%201.ipynb))
         - Faire une analyse complète de la base de données, en répondant aux questions suivantes :
-        - Quels sont les pays qui produisent le plus de films ?
-        - Quels sont les acteurs les plus présents ? À quelle période ?
-        - La durée moyenne des films s’allonge ou se raccourcit avec les années ?
-        - Les acteurs de série sont-ils les mêmes qu’au cinéma ? 
-        - Les acteurs ont en moyenne quel âge ? 
-        - Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?
+            * Quels sont les pays qui produisent le plus de films ?
+            * Quels sont les acteurs les plus présents ? À quelle période ?
+            * La durée moyenne des films s’allonge ou se raccourcit avec les années ?
+            * Les acteurs de série sont-ils les mêmes qu’au cinéma ? 
+            * Les acteurs ont en moyenne quel âge ? 
+            * Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?
         """
         )
 
