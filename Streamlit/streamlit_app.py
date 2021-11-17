@@ -430,7 +430,7 @@ def main():
 
 
         
-        col1, col2 = st.columns([1, 2])
+        col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
             moyenne_genre = pd.pivot_table(	FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
