@@ -223,62 +223,6 @@ def main():
 
     if choice == 'Movie recommandation':
         st.subheader("Movie recommandation")
-
-        # with st.expander("Title"):
-        #     mytext = st.text_area("Type Here")
-        #     st.write(mytext)
-        #     st.success("Hello")
-
-        #st.dataframe(df)
-        movies_title_list = df["primaryTitle"].tolist()
-
-        movie_choice = st.selectbox("Movie Title", movies_title_list)
-        # with st.expander('Movies DF'):
-        #     st.dataframe(df.head(10))
-
-            # Filter
-            # img_link = df[df["primaryTitle"] == movie_choice]["img_link"].values[0]
-            # title_link = df[df["primaryTitle"] == movie_choice]["primaryTitle"].values
-            # genre = df[df["primaryTitle"] == movie_choice]["Comedy"].values
-        genre = df[df["primaryTitle"] == movie_choice]["primaryTitle"].tolist()
-
-        #Layout
-        # st.write(img_link)
-        # st.image(img_link)
-
-
-        # with c1:
-        #     with st.expander("primaryTitle"):
-        #         st.write(genre)
-
-
-        user_choice = genre
-
-        user_choice2 = df[df['primaryTitle'].isin(user_choice)]
-
-        user_choice3 = user_choice2[['Action',
-            'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary',
-            'Drama', 'Fantasy', 'History', 'Horror', 'Music', 'Musical', 'Mystery',
-            'Romance', 'Sci-Fi', 'Sport', 'Thriller', 'Western']]
-
-        X = df_recommandation[['Action',
-            'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary',
-            'Drama', 'Fantasy', 'History', 'Horror', 'Music', 'Musical', 'Mystery',
-            'Romance', 'Sci-Fi', 'Sport', 'Thriller', 'Western']]
-
-        distanceKNN = NearestNeighbors(n_neighbors=1).fit(X)
-
-        mewtwo = distanceKNN.kneighbors(user_choice3)
-
-        mewtwo = mewtwo[1].reshape(1,1)[0]
-        liste_finale = df_recommandation.iloc[mewtwo]
-
-        for i in range(len(user_choice)):
-            liste_base = user_choice[i]
-            newlist = liste_finale["primaryTitle"].iloc[i]
-            print (f"En remplacement du film {liste_base} je propose {newlist}.")
-
-        st.write(liste_finale[["primaryTitle", "startYear"]])
                 
 ######################################################################################
 ######################################################################################
@@ -364,7 +308,7 @@ def main():
             st.plotly_chart(top10_graph)
 
         
-        st.write(
+        st.markdown(
             """
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
