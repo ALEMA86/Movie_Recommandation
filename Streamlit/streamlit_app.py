@@ -169,7 +169,7 @@ def main():
         )
         st.markdown(
         """ 
-        -Retourner une liste de films recommandés en fonction d'IDs ou de noms de films choisis par un utilisateur
+        - Retourner une liste de films recommandés en fonction d'IDs ou de noms de films choisis par un utilisateur
         """
         )
         st.markdown(
