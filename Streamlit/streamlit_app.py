@@ -235,7 +235,7 @@ def main():
     elif choice == "Analyses et KPI":
 
         
-        acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
+        
         
         
         
@@ -324,7 +324,7 @@ def main():
         st.write(' ')
         ########  Q02 -Bérenger  ############
         st.subheader("Quels sont les acteurs les plus présents ?") # add a subtitle
-        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ')
+        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
 
         col1, col2 = st.columns([2, 1])
         with col2:
@@ -340,7 +340,7 @@ def main():
                 - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
 
                 [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
 
@@ -367,25 +367,18 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
-        ########  Q02 -Bérenger  ############
+        ########  Q03 -Bérenger  ############
         st.subheader("Quels sont les acteurs les plus présents, à quelle période ?") # add a subtitle
-        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ')
-
+        acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
             st.markdown(
                 """
-                Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
-
-                Nous avons nettoyé la base de données de la façon suivante :
-                - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
-                    - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
-                    - dans la colonne 'character', nous avons supprimé les "backslash N", les 'Narrator', 'Various' et 'Additional Voices'
-                - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
+                
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK') reprenant les 5 acteurs les plus présents pour chaque décennies depuis 1910.
 
                 [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
 
@@ -393,14 +386,22 @@ def main():
                 )
 
         with col2:
-            fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
-            title = 'Quels sont les acteurs les plus présents ?',
-            labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
-            width=800, height=600)
+            fig = px.bar(acteur_par_periode, x = 'count', y="rank", text ='primaryName', color = 'primaryName',
+            title = 'Quels sont les acteurs les plus présents par périodes ?',
+            labels = {'startYear': 'Période', 'primaryName': 'Acteurs'},
+            orientation='h',
+            animation_frame="startYear",
+            range_x=[0,150],
+            range_y=[0,6],
+            width=800, height=500)
+        
+        fig.update_traces(textfont_size=12, textposition='outside')
+        fig.update_layout(template='plotly_dark')
+        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+        fig.update_layout(showlegend=False, title_x=0.5)
 
-            st.plotly_chart(fig)
+        st.plotly_chart(fig)
 
         st.write("")
         st.markdown("""
