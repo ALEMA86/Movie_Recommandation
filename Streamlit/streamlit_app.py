@@ -284,9 +284,9 @@ def main():
         top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
 
         col1, col2 = st.columns([1, 2])
-        with col1:
-            st.write(' ')
-            st.markdown(
+            with col1:
+                st.write(' ')
+                st.markdown(
                 """
                 Le dataset a été élaboré à partir de deux fichiers : title.basics et title.akas.
 
@@ -304,9 +304,9 @@ def main():
                 [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
 
                 """
-            )
+                )
 
-        with col2:
+            with col2:
             #top10_graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma)
             #fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
             #st.plotly_chart(top10_graph)
