@@ -312,19 +312,10 @@ def main():
             st.plotly_chart(top10Graph)
 
         st.write("")
-        st.write("""
-                Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
-                """
-                ) 
-        st.write("""               
+        st.markdown("""
+                Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.               
                 A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
-                """
-                ) 
-        st.write("""
                 On note également que trois des 5 continents sont représentés dans le top10.
-                """
-                ) 
-        st.write("""
                 La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
                 """
                 )
