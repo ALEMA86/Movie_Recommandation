@@ -58,7 +58,7 @@ st.set_page_config( layout='wide')
 def main():
 
     #st.title("Movie recommandation project")
-    menu = ["Présentation du Projet", "Movie recommandation", "Meaningful KPI"]
+    menu = ["Présentation du Projet", "Movie recommandation", "Analyses et KPI"]
 
     choice = st.sidebar.selectbox("Menu", menu) 
 
@@ -115,7 +115,7 @@ def main():
         """
         Notre cliente est Framboise de Papincourt, petite fille du Comte de Montmirail. Elle a 25 ans et dirige un cinéma en perte de vitesse qui s'appelle "LE KINO".
 
-        Elle fait appelle à nous car elle est désespérée. Son cinéma ne fait pas de bénéfice, ses créanciers sont à sa porte et ses problèmes financiers sont tels qu'elle a dû demandé un nouveau prêt dans une banque alors que c'est contre ses principes.
+        Elle fait appel à nous car elle est désespérée. Son cinéma ne fait pas de bénéfice, ses créanciers sont à sa porte et ses problèmes financiers sont tels qu'elle a dû demandé un nouveau prêt dans une banque alors que c'est contre ses principes.
 
         Issue d'une famille de nobles, elle ne peut pas faire non plus appel à ses proches qui sont fortunés, car elle a renié sa famille. En effet ses derniers ne partagent pas sa vision des choses; exemple : elle est vegan alors que l'activité principale de sa famille est la chasse...
 
@@ -288,7 +288,7 @@ def main():
 
 
 
-    elif choice == "Meaningful KPI":
+    elif choice == "Analyses et KPI":
         acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
         link = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO'
         top10 = pd.read_csv(link)
@@ -304,9 +304,15 @@ def main():
 
         st.title("Projet : recommandations de films")  # add a title
 
-        st.write("Ce projet effectué au sein de l'école Wild Code School a pour but de nous faire créer un moteur de recommandations de films.")
-
-        st.write("Un cinéma en perte de vitesse situé dans la Creuse vous contacte. Il a décidé de passer le cap du digital en créant un site Internet taillé pour les locaux.")
+        st.write("Comme énoncé dans notre partie 'Présentation du Projet', il nous est demandé de :")
+        st.write("- Faire une rapide présentation de la base de données (que vous pouvez retrouver [ici](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/Analyses_BDD_Etape%201.ipynb))")
+        st.write("- Faire une analyse complète de la base de données, en répondant aux questions suivantes :")
+        st.write("      - Quels sont les pays qui produisent le plus de films ?")
+        st.write("      - Quels sont les acteurs les plus présents ? À quelle période ?")
+        st.write("      - La durée moyenne des films s’allonge ou se raccourcit avec les années ?")
+        st.write("      - Les acteurs de série sont-ils les mêmes qu’au cinéma ? ")
+        st.write("      - Les acteurs ont en moyenne quel âge ? ")
+        st.write("      - Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?")
 
         st.write("Pour commencer, nous devons explorer la base de données afin de répondre aux questions suivantes :")
         st.write("- Quels sont les pays qui produisent le plus de films ?")
