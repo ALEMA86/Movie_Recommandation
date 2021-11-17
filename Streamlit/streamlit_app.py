@@ -467,7 +467,9 @@ def main():
                 Si l’on regarde le dernier graphique (avec une échelle de 0 à 100), la durée des films d’une année sur l’autre paraît à peu près stable.
                 """
                 )
-
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
 
 
 
