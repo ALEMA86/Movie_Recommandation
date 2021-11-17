@@ -398,7 +398,7 @@ def main():
             animation_frame="startYear",
             range_x=[0,150],
             range_y=[0,6],
-            width=800, height=500)
+            width=600, height=500)
         
         fig.update_traces(textfont_size=12, textposition='outside')
         fig.update_layout(template='plotly_dark')
