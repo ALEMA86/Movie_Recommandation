@@ -131,7 +131,7 @@ def main():
         st.subheader("Notre mission")
 
         st.markdown(
-        """"
+        """
         Nous devons fournir à notre client les outils d’analyse de la base de données issue de **IMDB**.
 
         Il est nécessaire de :
@@ -146,6 +146,7 @@ def main():
 	        - Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
 	        - Proposition d’une rétrospective avec un modèle de **Régression Logistique**
         """
+        , unsafe_allow_html=True
         )
 
         st.subheader('')
