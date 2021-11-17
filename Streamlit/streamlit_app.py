@@ -414,6 +414,67 @@ def main():
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+        ########  Q04 -Christophe  ############
+        st.subheader("La durée moyenne des films s’allonge ou se raccourcit avec les années ?") # add a subtitle
+ 
+        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
+
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ')
+            st.markdown(
+                """
+                Le dataset a été élaboré à partir d’un seul fichier : title.basics.tsv..
+
+                Le fichier title.basics a été traité comme pour la question relative aux pays les plus distributeurs (Q01), à l’exception du type qui a été limité aux films ('movie'); les 'tvMovie' ont donc été supprimés.
+                Nous avons calculé la durée moyenne des films par année et conservé que les années échues.
+
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+
+                [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/Projet%202%20-%20La%20dur%C3%A9e%20moyenne%20des%20films%20s%E2%80%99allonge%20ou%20se%20raccourcit%20avec%20les%20ann%C3%A9es.ipynb?token=AUTGRHYUBLRJAC7RDMOD6XLBTZ372)
+
+                """
+                )
+
+        with col1:
+            fig = make_subplots(rows=2, cols=2)
+
+            fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),row=1, col=1)
+            fig.update_xaxes(title_text="", row=1, col=1)
+            fig.update_yaxes(title_text="", row=1, col=1)
+
+            fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]), row=1, col=2)
+            fig.update_xaxes(title_text="", row=1, col=2)
+            fig.update_yaxes(title_text="", row=1, col=2, range=[80, 100])
+
+            fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),row=2, col=1)
+            fig.update_xaxes(title_text="", row=1, col=1)
+            fig.update_yaxes(title_text="", row=2, col=1, range=[50, 100])
+
+            fig.add_trace(go.Line(x = film["startYear"], y=film["runtimeMinutes"]),row=2, col=2)
+            fig.update_xaxes(title_text="", row=1, col=2)
+            fig.update_yaxes(title_text="", row=2, col=2, range=[0, 100])
+
+            fig.update_layout(height=1000, width=1400, title_text="Evolution de la durée des films en minutes depuis 1960", title_x=0.5, showlegend=False, template='plotly_dark', autosize=False)
+
+            st.plotly_chart(fig)
+
+        st.write("")
+        st.image("https://i.ibb.co/NV1RFNH/C-mod.png") 
+        st.markdown("""
+                La lecture du premier graphique (en haut à gauche), donne l’impression d’une grande variabilité de la durée des films entre 1960 et 2020.
+                Il s’agit en fait d’un biais de lecture lié à l’échelle utilisée. Comme la durée varie réellement peu (entre 87 et 95 mn), l’échelle du graphique a été automatiquement adaptée et fait ressortir une variation importante.
+                Les trois graphiques suivants montrent donc les données avec une échelle de plus en plus large.
+                Si l’on regarde le dernier graphique (avec une échelle de 0 à 100), la durée des films d’une année sur l’autre paraît à peu près stable.
+                """
+                )
+
+
+
+
 
 
 
