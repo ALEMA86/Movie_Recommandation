@@ -305,73 +305,7 @@ def main():
         concat_listeTopTV = pd.read_csv(link5)
 
 
-        #######################################
-        ########  Introduction     ############
-        #######################################
 
-        st.title("Projet ABC'S : Recommandations de Films")  # add a title
-        st.write("")
-        st.subheader("Analyses de la base de données et KPI") # add a subtitle
-
-        st.write("Comme énoncé dans notre partie **'Présentation du Projet'**, il nous est demandé de :")
-        st.markdown(
-        """
-        - Faire une rapide présentation de la base de données (que vous pouvez retrouver [ici](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/Analyses_BDD_Etape%201.ipynb))
-        - Faire une analyse complète de la base de données, en répondant aux questions suivantes :
-            * Quels sont les pays qui produisent le plus de films ?
-            * Quels sont les acteurs les plus présents ? À quelle période ?
-            * La durée moyenne des films s’allonge ou se raccourcit avec les années ?
-            * Les acteurs de série sont-ils les mêmes qu’au cinéma ? 
-            * Les acteurs ont en moyenne quel âge ? 
-            * Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ?
-        """
-        )
-
-        #######################################
-        ########    GRAPHIQUES     ############
-        #######################################
-
-
-        ########  Q01 -Christophe  ############
-        top10 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO')
-
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            st.write(' ')
-            st.markdown(
-                """
-                Le dataset a été élaboré à partir de deux fichiers : title.basics et title.akas.
-
-                Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
-
-                Ainsi, à partir de title.basics, il a été choisi de ne retenir que les films ('movie') et téléfilms ('tvMovie) réalisés après 1960, limitant notre périmètre d’analyse aux films les plus récents. Les courts-métrages (“short”) ont également été retirés.
-                Les lignes n'ayant pas de données pour les items suivants ont été supprimées de notre DataFrame: année de réalisation ('startYear'), de durée ('runtimeMinutes') ou de genres ('genres').
-
-                De la même façon, les films qui n’ont pas de région dans le fichiers title.akas ont été supprimés.
-
-                Une jointure a été réalisée entre les deux DataFrame afin d’ajouter la région aux colonnes de la base de données title.basics.
-
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO') reprenant  le top 10 des pays ayant distribué le plus de films et téléfilms a été produit.
-
-                [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
-
-                """
-            )
-
-        with col2:
-            top10_graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.plasma, title = 'Palmarès des pays selon la distribution des oeuvres cinématographiques', width=700, height=500, template='plotly_dark')
-
-            st.plotly_chart(top10_graph)
-
-        
-        st.write(
-            """
-                Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.
-                A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
-                On note également que trois des 5 continents sont représentés dans le top10.
-                La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
-            """
-        )
 
 
 
