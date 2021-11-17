@@ -149,12 +149,12 @@ def main():
         )
         st.markdown(
         """ 
-            * Films : types, durées...
+            *Films : types, durées...
         """
         )
         st.markdown(
         """ 
-            * Acteurs : nombre de films, type de films...
+            *Acteurs : nombre de films, type de films...
         """
         )
         st.markdown(
@@ -179,12 +179,12 @@ def main():
         )
         st.markdown(
         """ 
-	        * Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
+	        *Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
         """
         )
         st.markdown(
         """ 
-	        * Proposition d’une rétrospective avec un modèle de **Régression Logistique**
+	        *Proposition d’une rétrospective avec un modèle de **Régression Logistique**
         """
         )
 
