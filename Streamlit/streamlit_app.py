@@ -416,26 +416,6 @@ def main():
 
 
 
-        fig = px.bar(acteur_par_periode, x = 'count', y="rank", text ='primaryName', color = 'primaryName',
-            title = 'Quels sont les acteurs les plus présents par périodes ?',
-            labels = {'startYear': 'Période', 'primaryName': 'Acteurs'},
-            orientation='h',
-            animation_frame="startYear",
-            range_x=[0,150],
-            range_y=[0,6],
-            width=800, height=500)
-        
-        fig.update_traces(textfont_size=12, textposition='outside')
-        fig.update_layout(template='plotly_dark')
-        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
-
-        fig.update_layout(showlegend=False, title_x=0.5)
-
-        st.plotly_chart(fig)
-
-        test5 = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films", color_continuous_scale=px.colors.sequential.Viridis, title = 'Pays produisants le plus de film depuis 1960', width=700, height=500, template='plotly_dark')
-
-        st.plotly_chart(test5)
 
 
 
