@@ -236,9 +236,9 @@ def main():
 
         
         acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
-        link = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO'
         
-        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ')
+        
+        
         link2 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/film3.csv?token=AU6BUZQSZO7FES64E636CRLBS2IWM'
         film = pd.read_csv(link2)
         link3 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_liste50.csv?token=AU6BUZSY6OPPE25EYFUWFELBS2IS4'
@@ -319,14 +319,35 @@ def main():
                 La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
                 """
                 )
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+        ########  Q02 -Bérenger  ############
+        st.subheader("Quels sont les acteurs les plus présents ?") # add a subtitle
+        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ')
 
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ')
+            st.markdown(
+                """
+                Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
 
+                Nous avons nettoyé la base de données de la façon suivante :
+                - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
+                    - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
+                    - dans la colonne 'character', nous avons supprimé les '\N', les 'Narrator', 'Various' et 'Additional Voices'
+                - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
 
+                [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
 
+                """
+                )
 
-
-
+        with col1:
         fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
             title = 'Quels sont les acteurs les plus présents ?',
             labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
@@ -335,6 +356,64 @@ def main():
         fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
 
         st.plotly_chart(fig)
+
+        st.write("")
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+
+
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+        ########  Q02 -Bérenger  ############
+        st.subheader("Quels sont les acteurs les plus présents, à quelle période ?") # add a subtitle
+        presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ')
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.write(' ')
+            st.markdown(
+                """
+                Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
+
+                Nous avons nettoyé la base de données de la façon suivante :
+                - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
+                    - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
+                    - dans la colonne 'character', nous avons supprimé les '\N', les 'Narrator', 'Various' et 'Additional Voices'
+                - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/presence_acteurs.csv?token=AU6BUZRUOZP7577TQEBP5ODBS2IXQ') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+
+                [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
+
+                """
+                )
+
+        with col2:
+        fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
+            title = 'Quels sont les acteurs les plus présents ?',
+            labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
+            width=800, height=600)
+
+        fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+
+        st.plotly_chart(fig)
+
+        st.write("")
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+
+
+
+
+
+
+
 
         fig = px.bar(acteur_par_periode, x = 'count', y="rank", text ='primaryName', color = 'primaryName',
             title = 'Quels sont les acteurs les plus présents par périodes ?',
