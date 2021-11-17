@@ -398,15 +398,15 @@ def main():
             animation_frame="startYear",
             range_x=[0,150],
             range_y=[0,6],
-            width=600, height=500)
+            width=800, height=500)
         
-        fig.update_traces(textfont_size=12, textposition='outside')
-        fig.update_layout(template='plotly_dark')
-        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+            fig.update_traces(textfont_size=12, textposition='outside')
+            fig.update_layout(template='plotly_dark')
+            fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 
-        fig.update_layout(showlegend=False, title_x=0.5)
+            fig.update_layout(showlegend=False, title_x=0.5)
 
-        st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
         st.write("")
         st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
