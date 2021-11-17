@@ -440,7 +440,7 @@ def main():
             Genres = moyenne_genre_unstacked.index
             moyenne = moyenne_genre_unstacked['averageRating']
 
-            fig = px.bar(moyenne_genre_unstacked, x=Genres, y =moyenne, color = moyenne_genre_unstacked.index,title = 'Note moyenne par genre de films ',width=400, height=300)
+            fig = px.bar(moyenne_genre_unstacked, x=Genres, y =moyenne, color = moyenne_genre_unstacked.index,title = 'Note moyenne par genre de films ',width=600, height=450)
             fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             st.plotly_chart(fig)
 
@@ -453,7 +453,7 @@ def main():
             genres = nb_moyen_votes_unstacked.index
             nb_votes = nb_moyen_votes_unstacked['numVotes']
 
-            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=400, height=300)
+            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
             fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
             
             st.plotly_chart(fig)
