@@ -433,18 +433,19 @@ def main():
         col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
-            moyenne_genre = pd.pivot_table(FULL_DF, values="averageRating", columns="genre1", aggfunc=np.mean)
- 
-            # Plot a bar chart using the DF
-            ax = moyenne_genre.plot(kind="barh")
-            # Get a Matplotlib figure from the axes object for formatting purposes
-            fig = ax.get_figure()
-            # Change the plot dimensions (width, height)
-            fig.set_size_inches(7, 6)
-            # Change the axes labels
-            ax.set_xlabel("Note moyenne par genre")
-            ax.set_ylabel("Genres de 1er rang")
+            # Note moyenne par genre de films 
 
+            moyenne_genre = pd.pivot_table(	FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
+            moyenne_genre_unstacked = moyenne_genre.unstack().unstack()
+            moyenne_genre_unstacked =moyenne_genre_unstacked.sort_values('averageRating')
+
+            Genres = moyenne_genre_unstacked.index
+            moyenne = moyenne_genre_unstacked['averageRating']
+
+            plt.barh(Genres,moyenne)
+            plt.title('Note moyenne par genre de films ')
+            plt.ylabel('Genres')
+            plt.xlabel('Note moyenne')
             plt.show()
 
         with col2:
