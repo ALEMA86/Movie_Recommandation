@@ -683,7 +683,7 @@ def main():
             boxplot.set_ylabel('Age', size = 15)
             boxplot.tick_params(labelsize = 10)
 
-            plt.show()
+            st.pyplot(boxplot)
         
         st.write("")    
         st.write("")
@@ -719,17 +719,12 @@ def main():
             boxplot.tick_params(labelsize = 10)
             boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
 
-            plt.show()
+            st.pyplot(boxplot)
         st.write("")
 
         st.markdown("""
-                Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms : 
-                    - Acteurs : 43 ans
-                    - Actrices : 36 ans
-                Voici l'âge central pour ces mêmes populations : 
-                    - Acteurs : 41 ans
-                    - Actrices : 32 ans
-                **En ATTENTE**
+                
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
 
