@@ -763,7 +763,7 @@ def main():
                 )
 
         with col1:
-            x = Age_DF_clean['category']
+            x = Age_DF_clean['titleType']
             fig = go.Figure()
 
             #fig = px.box(x=Age_DF_clean["titleType"], y= Age_DF_clean["Age"], color=Age_DF_clean["category"], boxmean=True
