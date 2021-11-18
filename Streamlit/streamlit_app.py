@@ -704,36 +704,36 @@ def main():
 
         with col1:
 
-            y = Age_DF_clean["Age"]
-            x = Age_DF_clean[Age_DF_clean['category']
+            #y = Age_DF_clean["Age"]
+            #x = Age_DF_clean[Age_DF_clean['category']
             #x_actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
             #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
-            fig = go.Figure()
-            fig.add_trace(go.Box(y=y, marker_color='royalblue', boxmean=True # represent mean
-            ))
-            fig.add_trace(go.Box(y=y, marker_color='coral', boxmean=True # represent mean
-            ))
-            fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Population')
-            fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Population')
+            #fig = go.Figure()
+            #fig.add_trace(go.Box(y=y, marker_color='royalblue', boxmean=True # represent mean
+            #))
+            #fig.add_trace(go.Box(y=y, marker_color='coral', boxmean=True # represent mean
+            #))
+            #fig.update_yaxes(title= 'Age')
+            #fig.update_xaxes(title= 'Population')
+            #fig.update_yaxes(title= 'Age')
+            #fig.update_xaxes(title= 'Population')
 
-            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
+            #fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
 
             
-            st.plotly_chart(fig)
+            #st.plotly_chart(fig)
 
-        st.write("")    
-        st.write("")
+        #st.write("")    
+        #st.write("")
 
 
 
 
 
         ######GRAPH03#########
-        col1, col2 = st.columns([2, 1])
-        with col2:
+        #col1, col2 = st.columns([2, 1])
+        #with col2:
             st.write(' ')
             st.write(' ')
             st.write(' ')
@@ -767,18 +767,18 @@ def main():
         with col1:
             fig, axes = plt.subplots(figsize=(15, 10))
 
-            sns.set_style("whitegrid")
-            boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age", hue = 'titleType',
-                        showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+            #sns.set_style("whitegrid")
+            #boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age", hue = 'titleType',
+                        #showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
 
 
-            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            boxplot.set_xlabel("Sexe", size = 15)
-            boxplot.set_ylabel('Age', size = 15)
-            boxplot.tick_params(labelsize = 10)
-            boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
+            #boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            #boxplot.set_xlabel("Sexe", size = 15)
+            #boxplot.set_ylabel('Age', size = 15)
+            #boxplot.tick_params(labelsize = 10)
+            #boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
 
-            st.plotly_chart(boxplot)
+            #st.plotly_chart(boxplot)
         st.write("")
 
         st.markdown("""
