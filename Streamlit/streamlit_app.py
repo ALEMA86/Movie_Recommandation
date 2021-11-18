@@ -717,7 +717,6 @@ def main():
             #fig.update_xaxes(title= 'Population')
 
             fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
-
             
             st.plotly_chart(fig)
 
@@ -762,8 +761,12 @@ def main():
                 )
 
         with col1:
-            fig, axes = plt.subplots(figsize=(15, 10))
 
+            fig = go.Figure()
+
+            fig = px.box(Age_DF_clean, x="titleType", y= "Age", color="category", boxmean=True, hover_data=["Type de films"] # add day column to hover data
+            )
+            fig.update_layout(title_text="Age des acteurs et actrices : par type de film et genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             #sns.set_style("whitegrid")
             #boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age", hue = 'titleType',
                         #showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
