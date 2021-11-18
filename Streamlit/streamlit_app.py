@@ -94,7 +94,7 @@ def main():
     # Result from your choice inside the menu
     if choice == 'Système de recommandation':
 
-        # CSS code withing markdown to center the title
+        # CSS code within markdown to center the title
         st.markdown("<h1 style='text-align: center;'>Recommandation de films</h1>", unsafe_allow_html=True)
 
         # Variable X used for Machine Learning
@@ -192,7 +192,8 @@ def main():
 ######################################################################################
 ######################################################################################
     if choice == "Présentation du Projet":
-        st.title("Présentation du Projet")
+                # CSS code within markdown to center the title
+        st.markdown("<h1 style='text-align: center;'>Présentation du Projet</h1>", unsafe_allow_html=True)
         st.subheader('')
         st.subheader("Le Projet")
 
@@ -375,7 +376,8 @@ def main():
         ########  Introduction     ############
         #######################################
 
-        st.title("Projet ABC'S : Recommandations de Films")  # add a title
+                        # CSS code within markdown to center the title
+        st.markdown("<h1 style='text-align: center;'>Analyses et KPI</h1>", unsafe_allow_html=True)
         st.write("")
         st.subheader("Analyses de la base de données et KPI") # add a subtitle
 
