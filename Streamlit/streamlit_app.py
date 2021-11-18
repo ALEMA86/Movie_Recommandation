@@ -643,7 +643,7 @@ def main():
         with col1:
             moyenne = round(Age_DF_clean['Age'].mean())
             #fig = px.box(Age_DF_clean, y="Age")
-            fig = go.Figure(Age_DF_clean)
+            fig = go.Figure()
             fig.add_trace(go.Box( y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
             ))
             
