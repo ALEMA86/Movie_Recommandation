@@ -778,7 +778,7 @@ def main():
             #boxplot.tick_params(labelsize = 10)
             #boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
 
-            #st.plotly_chart(boxplot)
+            st.plotly_chart(fig)
         st.write("")
 
         st.markdown("""
