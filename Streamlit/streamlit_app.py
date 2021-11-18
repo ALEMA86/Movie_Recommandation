@@ -705,15 +705,14 @@ def main():
         with col1:
 
             y = Age_DF_clean["Age"]
-            actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
-            actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
+            x = Age_DF_clean[Age_DF_clean['category']
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y=y, x=actor, marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=x, marker_color='royalblue', boxmean=True # represent mean
             ))
 
-
-            
+            fig.update_yaxes(title= 'Age')
+            fig.update_xaxes(title= 'Population')
 
             fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
 
