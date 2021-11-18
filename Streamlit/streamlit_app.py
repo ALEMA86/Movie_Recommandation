@@ -194,6 +194,8 @@ def main():
     if choice == "Présentation du Projet":
                 # CSS code within markdown to center the title
         st.markdown("<h1 style='text-align: center;'>Présentation du Projet</h1>", unsafe_allow_html=True)
+                # This create a nice grey line between the title and the multiselect menu
+        st.write("---------------------------------------------------------")
         st.subheader('')
         st.subheader("Le Projet")
 
@@ -378,6 +380,8 @@ def main():
 
                         # CSS code within markdown to center the title
         st.markdown("<h1 style='text-align: center;'>Analyses et KPI</h1>", unsafe_allow_html=True)
+                # This create a nice grey line between the title and the multiselect menu
+        st.write("---------------------------------------------------------")
         st.write("")
         st.subheader("Analyses de la base de données et KPI") # add a subtitle
 
