@@ -671,23 +671,28 @@ def main():
             st.write(' ') 
             st.markdown(
                 """
-                Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms : 
-                    - Acteurs : 43 ans
-                    - Actrices : 36 ans
-                Voici l'âge central pour ces mêmes populations : 
-                    - Acteurs : 41 ans
-                    - Actrices : 32 ans
+                Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms :
+                - Acteurs :     43 ans
+                - Actrices :    36 ans
+
+                Voici l'âge central pour ces mêmes populations :
+                - Acteurs :     41 ans
+                - Actrices :    32 ans
+
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
 
         with col1:
+
+            y = Age_DF_clean["Age"]
+            x = Age_DF_clean["category"]
             fig = go.Figure()
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=x, name = 'actor', marker_color='royalblue', boxmean=True # represent mean
             ))
 
 
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actress', marker_color='coral', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=x, name = 'actress', marker_color='coral', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')            
