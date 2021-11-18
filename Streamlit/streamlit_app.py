@@ -650,14 +650,14 @@ def main():
             moyenne = round(Age_DF_clean['Age'].mean())
             #fig = px.box(Age_DF_clean, y="Age")
             fig = go.Figure()
-            fig.add_trace(go.Box( y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
             ))
             
             #fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
             #fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            fig.set_xlabel("Sexe", size = 15)
-            fig.set_ylabel('Age', size = 15)
-            fig.tick_params(labelsize = 10)
+            #fig.set_xlabel("Sexe", size = 15)
+            #fig.set_ylabel('Age', size = 15)
+            #fig.tick_params(labelsize = 10)
             fig.update_layout(title_text="Age des acteurs et actrices : Zoom", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
 
