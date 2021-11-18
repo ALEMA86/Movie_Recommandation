@@ -653,7 +653,7 @@ def main():
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
-            st.pyplot()
+            st.pyplot(fig)
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
