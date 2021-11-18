@@ -241,12 +241,9 @@ def main():
         
         link2 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/film3.csv?token=AU6BUZQSZO7FES64E636CRLBS2IWM'
         film = pd.read_csv(link2)
-        link3 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_liste50.csv?token=AU6BUZSY6OPPE25EYFUWFELBS2IS4'
-        link4 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_listeTopFilm.csv?token=AU6BUZUX7HJJXUSIP47YANLBS2IVA'
-        link5 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_listeTopTV.csv?token=AU6BUZWRESNKYQ36Y652SJLBS2IVW'
-        concat_liste_50 = pd.read_csv(link3)
-        concat_listeTopFilm = pd.read_csv(link4)
-        concat_listeTopTV = pd.read_csv(link5)
+
+
+        
 
 
         #######################################
@@ -278,8 +275,9 @@ def main():
         ########    GRAPHIQUES     ############
         #######################################
 
-
+        #######################################
         ########  Q01 -Christophe  ############
+        #######################################
         st.subheader("Quels sont les pays qui distribuent le plus de films ?") # add a subtitle
 
 
@@ -325,7 +323,9 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
+        #####################################
         ########  Q02 -Bérenger  ############
+        #####################################
         st.subheader("Quels sont les acteurs les plus présents ?") # add a subtitle
  
         presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
@@ -372,7 +372,9 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
+        #####################################
         ########  Q03 -Bérenger  ############
+        #####################################
         st.subheader("Quels sont les acteurs les plus présents, à quelle période ?") # add a subtitle
         acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
         col1, col2 = st.columns([1, 2])
@@ -417,21 +419,23 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
+        #######################################
         ########  Q04 -Christophe  ############
+        #######################################
         st.subheader("La durée moyenne des films s’allonge ou se raccourcit avec les années ?") # add a subtitle
  
         presence_acteur = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI')
 
         st.markdown(
                 """
-                Le dataset a été élaboré à partir d’un seul fichier : title.basics.tsv..
+                Le dataset a été élaboré à partir d’un seul fichier : title.basics.tsv.
 
                 Le fichier title.basics a été traité comme pour la question relative aux pays les plus distributeurs (Q01), à l’exception du type qui a été limité aux films ('movie'); les 'tvMovie' ont donc été supprimés.
                 Nous avons calculé la durée moyenne des films par année et conservé que les années échues.
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI') reprennant toutes les informations requises a été produit.
 
-                [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/Projet%202%20-%20La%20dur%C3%A9e%20moyenne%20des%20films%20s%E2%80%99allonge%20ou%20se%20raccourcit%20avec%20les%20ann%C3%A9es.ipynb?token=AUTGRHYUBLRJAC7RDMOD6XLBTZ372)
+                [Lien Notebook]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/Projet%202%20-%20La%20dur%C3%A9e%20moyenne%20des%20films%20s%E2%80%99allonge%20ou%20se%20raccourcit%20avec%20les%20ann%C3%A9es.ipynb?token=AUTGRH3TRSZ7CDJ62ME6XU3BT44DO')
 
                 """
             )
@@ -465,13 +469,107 @@ def main():
                 Il s’agit en fait d’un biais de lecture lié à l’échelle utilisée. Comme la durée varie réellement peu (entre 87 et 95 mn), l’échelle du graphique a été automatiquement adaptée et fait ressortir une variation importante.
                 
                 Les trois graphiques suivants montrent donc les données avec une échelle de plus en plus large.
-                
+
                 Si l’on regarde le dernier graphique (avec une échelle de 0 à 100), la durée des films d’une année sur l’autre paraît à peu près stable.
                 """
                 )
         st.write(' ')
         st.write(' ')
         st.write(' ')
+        #######################################
+        ########  Q05 -Christophe  ############
+        #######################################
+        st.subheader("Les acteurs de série sont-ils les mêmes qu’au cinéma ?") # add a subtitle
+ 
+        concat_liste_50 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_liste50.csv?token=AU6BUZSY6OPPE25EYFUWFELBS2IS4')
+        concat_listeTopFilm = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_listeTopFilm.csv?token=AU6BUZUX7HJJXUSIP47YANLBS2IVA')
+        concat_listeTopTV = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/concat_listeTopTV.csv?token=AU6BUZWRESNKYQ36Y652SJLBS2IVW')
+
+        st.markdown(
+                """
+                Le dataset a été élaboré à partir de trois fichiers : title.basics et title.principals et name.basics.
+
+                Le fichier title.basics a été traité comme pour la question n°1.
+                
+                A partir de title.basics, il a été choisi de ne retenir que les films et téléfilms réalisés à partir de 1960, afin de limiter le périmètre d’analyse aux films les plus récents. Les courts métrages (“short”) ont également été retirés.
+                Un certain nombre de ces films n’ont pas d’année de réalisation, de durée ou de genres. Ils ont donc été supprimés de la base.
+
+                Le fichier title.principals a été filtré pour ne conserver que les items actrices et acteurs. Le fichier name.basics à permis de faire le lien avec leur nom.
+
+                Afin de réaliser le graphique, 3 dataframes attitrés reprenant toutes les informations dont nous avions besoin ont été produits:
+                - [Top 20 des acteurs ayant tourné autant de films que de téléfilms](concat_liste_50)
+                - [Top 20 des acteurs ayant tourné le plus de films](concat_listeTopFilm)
+                - [Top 20 des acteurs ayant tourné le plus de téléfilms](concat_listeTopTV)
+
+                [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
+
+                Les éléments en notre possession nous ont permis de créer 3 graphiques :
+                """
+            )
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.write(' ')
+            st.markdown(
+                """
+                        **Top 20 des acteurs ayant tourné autant de films que de téléfilms**
+
+                         Il s’agit des acteurs des acteurs qui ont tourné le plus tout en faisant autant de téléfilm que de film.
+                        La quantité de films par acteurs semble assez faible par rapport aux deux catégories suivantes.
+                """
+                )
+
+        with col2:
+            fig = px.bar(data_frame = concat_liste_50, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["darkred", "green"],labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films"))
+            fig.update_layout(title_text="Top 20 des acteurs ayant tournés autant au cinéma qu'à la TV", width=1000, height=600, template='plotly_dark')
+
+            st.plotly_chart(fig)
+
+        st.write("")
+        st.write("")
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.write(' ')
+            st.markdown(
+                """
+                        **Top 20 des acteurs ayant tourné le plus de films**
+
+                        Le graphique montre clairement que les acteurs ayant le plus tournés au cinéma ont fait très peu de téléfilms.
+                        Il faut effectivement zoomer sur le graphique pour s’apercevoir que 4 d’entre aux ont tournés dans un ou deux téléfilms seulement.
+                """
+                )
+
+        with col2:
+            fig = px.bar(data_frame = concat_listeTopFilm, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["blue", "lime"], labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films", color = 'type'))
+            fig.update_layout(title_text="Top 20 des acteurs ayant tournés le plus de films au cinéma", title_x=0.5, width=1000, height=600, template='plotly_dark')
+
+            st.plotly_chart(fig)
+
+        st.write("")
+        st.write("")
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.write(' ')
+            st.markdown(
+                """
+                        **Top 20 des acteurs ayant tourné le plus de téléfilms**
+
+                        On s’aperçoit qu’à l’inverse des acteurs de cinéma, les acteurs ayant tournés le plus de téléfilms ont également tournés des films au cinéma.
+                        Cependant, au global ont remarque qu'ils ont tournés dans moins de films mais ont tous fait au moins des apparitions au cinéma.
+                """
+                )
+
+        with col2:
+            fig = px.bar(data_frame = concat_listeTopTV, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["orange", "olive"], labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films"))
+            fig.update_layout(title_text="Top 20 des acteurs ayant tournés le plus de téléfilms", title_x=0.5, width=1000, height=600, template='plotly_dark')
+
+            st.plotly_chart(fig)
+        
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
 
 
 
@@ -487,27 +585,6 @@ def main():
 
 
 
-        ######################
-
-
-
-        fig = px.bar(data_frame = concat_liste_50, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["darkred", "green"],labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films"))
-        fig.update_layout(title_text="Top 20 des acteurs ayant tournés autant au cinéma qu'à la TV", width=1000, height=600, template='plotly_dark')
-
-        st.plotly_chart(fig)
-
-
-
-        fig = px.bar(data_frame = concat_listeTopFilm, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["blue", "lime"], labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films", color = 'type'))
-        fig.update_layout(title_text="Top 20 des acteurs ayant tournés le plus du film au cinéma", title_x=0.5, width=1000, height=600, template='plotly_dark')
-
-        st.plotly_chart(fig)
-
-
-        fig = px.bar(data_frame = concat_listeTopTV, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["orange", "olive"], labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films"))
-        fig.update_layout(title_text="Top 20 des acteurs ayant tournés le plus du film à la télévision", title_x=0.5, width=1000, height=600, template='plotly_dark')
-
-        st.plotly_chart(fig)
 
         ######################################################################################
         ######################################################################################
