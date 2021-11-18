@@ -686,18 +686,20 @@ def main():
         with col1:
 
             y = Age_DF_clean["Age"]
-            x = Age_DF_clean["category"]
+            actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
+            actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
+
             fig = go.Figure()
-            fig.add_trace(go.Box(y=y, x=x, name = 'actor', marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=actor, name = 'Acteurs', marker_color='royalblue', boxmean=True # represent mean
             ))
 
 
-            fig.add_trace(go.Box(y=y, x=x, name = 'actress', marker_color='coral', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=actress, name = 'Actrices', marker_color='coral', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')            
 
-            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
 
             
             st.plotly_chart(fig)
