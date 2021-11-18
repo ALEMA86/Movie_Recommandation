@@ -905,7 +905,7 @@ def main():
         st.subheader("Quels sont les films les mieux notés ?") # add a subtitle
 
 
-        qualify_movies = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y')
+        qualify_movies = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRH2J25FKEQLFK7VPH5TBT7DVE')
         st.write(' ')
         st.markdown(
                 """
@@ -938,7 +938,7 @@ def main():
                 st.code(code, language='python')
             
 
-                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avions besoin pour cette analyse a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRH2J25FKEQLFK7VPH5TBT7DVE) reprenant toutes les informations dont nous avions besoin pour cette analyse a été produit.
 
                 [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
 
