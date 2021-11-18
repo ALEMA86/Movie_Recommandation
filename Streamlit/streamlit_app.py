@@ -653,7 +653,7 @@ def main():
 
 
 
-            st.pyplot(fig)
+            st.plotly_chart(fig)
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
