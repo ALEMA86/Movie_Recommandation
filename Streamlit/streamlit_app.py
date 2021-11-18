@@ -900,12 +900,12 @@ def main():
         st.write(' ')
         st.write(' ')
         #######################################
-        ##########  Q06 -Aurore  ##############
+        ##########  Q07 -Aurore  ##############
         #######################################
         st.subheader("Quels sont les films les mieux notés ?") # add a subtitle
 
 
-        frames6 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y')
+        qualify_movies = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y')
         st.write(' ')
         st.markdown(
                 """
@@ -945,6 +945,53 @@ def main():
                 """
                 )
         st.image("https://i.ibb.co/4SxFQYy/A-mod.png")
+
+
+        col1, col2 = st.columns([1, 1])
+        with col1:
+            st.title('Quels sont les films les mieux notés ?')
+            qualify_movies_DF_FULL2 = qualify_movies.sort_values('moyenne_ponderee', ascending=False)
+            qualify_movies_DF_FULL2['text_graph'] = 'Note : ' + qualify_movies_DF_FULL2['moyenne_ponderee'].round(2).astype(str) + ', nombre de votes : '+ qualify_movies_DF_FULL2['numVotes'].astype(str)
+
+            fig = px.bar(qualify_movies_DF_FULL2, x='moyenne_ponderee', y='primaryTitle',title = 'Top 10 des films distribués en France depuis 1960', text = 'text_graph', orientation='h', range_x=[0,11],labels = {'moyenne_ponderee': 'Note', 'primaryTitle': 'Films'})
+            fig.update_yaxes(range=(9.5, -.5))
+            fig.update_layout(title_text="Top 10 des films distribués en France depuis 1960", title_x=0.5, width=1000, height=600, template='plotly_dark')
+
+            st.plotly_chart(fig)
+
+        with col2:
+            st.title('Nombre moyen de votes par genre')
+            nb_moyen_votes = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
+            nb_moyen_votes_unstacked = nb_moyen_votes.unstack().unstack()
+            nb_moyen_votes_unstacked = nb_moyen_votes_unstacked.sort_values('numVotes').round()
+
+            genres = nb_moyen_votes_unstacked.index
+            nb_votes = nb_moyen_votes_unstacked['numVotes']
+
+            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, labels = {'numVotes': 'Nombre moyen de votes', 'genre1': 'Genres de 1er rang'}, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            fig.update_xaxes(tickangle=-45)
+            
+            st.plotly_chart(fig)
+
+        st.write("")
+
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1019,47 +1066,9 @@ def main():
 
 
 
-        ######################################################################################
-        ######################################################################################
-        ###########################     AURORE     ###########################################
-        ######################################################################################
-        ######################################################################################
 
 
 
-
-
-
-        
-        col1, col2 = st.columns([1, 1])
-        with col1:
-            st.title('Note moyenne par genre de films')
-            moyenne_genre = pd.pivot_table(FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
-            moyenne_genre_unstacked = moyenne_genre.unstack().unstack()
-            moyenne_genre_unstacked =moyenne_genre_unstacked.sort_values('averageRating')
-
-            Genres = moyenne_genre_unstacked.index
-            moyenne = moyenne_genre_unstacked['averageRating']
-
-            fig = px.bar(moyenne_genre_unstacked, x=Genres, y =moyenne, labels = {'averageRating': 'Note moyenne', 'genre1': 'Genres de 1er rang'},color = moyenne_genre_unstacked.index,title = 'Note moyenne par genre de films ',width=600, height=450)
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            fig.update_xaxes(tickangle=-45)
-            st.plotly_chart(fig)
-
-        with col2:
-            st.title('Nombre moyen de votes par genre')
-            nb_moyen_votes = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
-            nb_moyen_votes_unstacked = nb_moyen_votes.unstack().unstack()
-            nb_moyen_votes_unstacked = nb_moyen_votes_unstacked.sort_values('numVotes').round()
-
-            genres = nb_moyen_votes_unstacked.index
-            nb_votes = nb_moyen_votes_unstacked['numVotes']
-
-            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, labels = {'numVotes': 'Nombre moyen de votes', 'genre1': 'Genres de 1er rang'}, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            fig.update_xaxes(tickangle=-45)
-            
-            st.plotly_chart(fig)
 
     
         
