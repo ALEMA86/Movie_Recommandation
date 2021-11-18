@@ -351,6 +351,7 @@ def main():
 
                 """
                 )
+
         with col1:
             fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
             title = 'Quels sont les acteurs les plus présents ?',
@@ -764,7 +765,7 @@ def main():
 
             fig = go.Figure()
 
-            fig = px.box(Age_DF_clean, x="titleType", y= "Age", color="category", boxmean=True, hover_data=["Type de films"] # add day column to hover data
+            fig = px.box(Age_DF_clean, x="titleType", y= "Age", color="category", boxmean=True
             )
             fig.update_layout(title_text="Age des acteurs et actrices : par type de film et genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             #sns.set_style("whitegrid")
@@ -885,7 +886,6 @@ def main():
 
     
         
-
 
 
 
