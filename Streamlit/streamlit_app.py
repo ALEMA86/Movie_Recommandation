@@ -471,7 +471,7 @@ def main():
                 Nous avons nettoyé la base de données de la façon suivante :
                 - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
                     - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
-                    - dans la colonne 'character', nous avons supprimé les st/latex(r```\R```) 'backslash N', les 'Narrator', 'Various' et 'Additional Voices'
+                    - dans la colonne 'character', nous avons supprimé les ```\R```, les 'Narrator', 'Various' et 'Additional Voices'
                 - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
@@ -918,9 +918,35 @@ def main():
 
                 Nous avons principalement utilisé les mêmes filtres que pour la question suivante afin de garder une cohérence dans notre analyse, et toujours aussi pour des raisons techniques (Dataset hébergés sur Github).
 
-                Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée'
+                Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée', qui pondère les valeurs de la colonne 'averageRating' selon celles de la colonne 'numVotes', selon la formule de pondération de la note fournie par IMDb :
+                """
+            )
+            st.latex(r```
+                    Weighted\; Rating (WR) = (\frac{v}{v + m} . R) + (\frac{m}{v + m} . C)
+                    ```)
+            st.markdown(
+                """
+                Où :
+                - v est le nombre de votes (= numVotes)
+                - m est le nombre minimum de votes requis pour être listé
+                - R est la moyenne des notes ditribuées par les votants (= averageRating) 
+                - C est le vote moyen sur l'ensemble du dataset
 
-                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO) reprenant  le top 10 des pays ayant distribué le plus de films et téléfilms a été produit.
+                Nous avons établi une fonction qui est la suivante pour cela :
+                """
+                )
+
+            code = '''def movie_ponderation(x,m=m,C=C):
+                            v=x['numVotes']
+                            R=x['averageRating']
+                            # calculation based on IMDB formula
+    
+                            return (v/(v+m)*R) + (m/(m+v)*C)'''
+            st.code(code, language='python')
+            
+            st.markdown(
+                """
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avons besoin pour cette analyse a été produit.
 
                 [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
 
