@@ -641,8 +641,9 @@ def main():
 
         with col1:
             moyenne = round(Age_DF_clean['Age'].mean())
-            fig = px.box(Age_DF_clean, y="Age", boxmean=True)
-
+            #fig = px.box(Age_DF_clean, y="Age")
+            fig.add_trace(go.Box( y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
+            ))
             
             #fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
             #fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
