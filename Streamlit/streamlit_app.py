@@ -653,10 +653,9 @@ def main():
             moyenne = round(Age_DF_clean['Age'].mean())
             #fig = px.box(Age_DF_clean, y="Age")
             fig = go.Figure()
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], marker_color='lightgreen', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'Population', marker_color='lightgreen', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Population')
             #fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
             #fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
             #fig.set_xlabel("Sexe", size = 15)
@@ -710,9 +709,9 @@ def main():
             #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'], boxmean=True # represent mean
+            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'].str.contains('actor'), name = 'Acteurs', boxmean=True # represent mean
             ))
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'], boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'].str.contains('actress'), name = 'Actrices',boxmean=True # represent mean
             ))
             #fig.update_yaxes(title= 'Age')
             #fig.update_xaxes(title= 'Population')
