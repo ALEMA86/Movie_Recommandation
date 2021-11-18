@@ -496,7 +496,7 @@ def main():
 
                 Le fichier title.principals a été filtré pour ne conserver que les items actrices et acteurs. Le fichier name.basics à permis de faire le lien avec leur nom.
 
-                Afin de réaliser le graphique, 3 dataframes attitrés reprenant toutes les informations dont nous avions besoin ont été produits:
+                Afin de réaliser le graphique, 3 dataframes attitrés reprenant toutes les informations dont nous avions besoin ont été produits :
                 - [Top 20 des acteurs ayant tourné autant de films que de téléfilms](concat_liste_50)
                 - [Top 20 des acteurs ayant tourné le plus de films](concat_listeTopFilm)
                 - [Top 20 des acteurs ayant tourné le plus de téléfilms](concat_listeTopTV)
@@ -509,6 +509,11 @@ def main():
 
         col1, col2 = st.columns([1, 2])
         with col1:
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.write(' ')
             st.markdown(
                 """
@@ -531,6 +536,11 @@ def main():
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.markdown(
                 """
                         **Top 20 des acteurs ayant tourné le plus de films**
@@ -551,6 +561,11 @@ def main():
 
         col1, col2 = st.columns([1, 2])
         with col1:
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.write(' ')
             st.markdown(
                 """
