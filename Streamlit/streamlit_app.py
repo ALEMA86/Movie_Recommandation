@@ -704,22 +704,23 @@ def main():
 
         with col1:
 
-            #y = Age_DF_clean["Age"]
-            #x = Age_DF_clean['category']
-            #x_actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
-            #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
-            #fig = go.Figure()
-            #fig.add_trace(go.Box(y= Age_DF_clean["Age"], color ='category', boxmean=True # represent mean
-            #))
+            y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')]
+            y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')]
+
+            fig = go.Figure()
+            fig.add_trace(go.Box(y= y_actor, color ='category', name = 'Acteurs', boxmean=True # represent mean
+            ))
+            fig.add_trace(go.Box(y= y_actress, color ='category', name = 'Actrices', boxmean=True # represent mean
+            ))
             #fig.update_yaxes(title= 'Age')
             #fig.update_xaxes(title= 'Population')
             #fig.update_yaxes(title= 'Age')
             #fig.update_xaxes(title= 'Population')
 
-            #fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             
-            #st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
         #st.write("")    
         #st.write("")
