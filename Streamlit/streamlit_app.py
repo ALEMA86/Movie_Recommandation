@@ -984,6 +984,17 @@ def main():
 
         st.write("")
 
+        st.title('Quels sont les films les mieux notés - Caractéristiques communes ?')
+        FULL_DF = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRH6TVDSC4VN4IF6LDHLBT7FC6')
+
+        fig = px.scatter_3d(FULL_DF,x="genre1",y ='genre2', z= 'genre3', color = 'moyenne_ponderee' )
+        fig.update_layout(title_text="Caractéristiques communes des films les mieux notés", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            
+        st.plotly_chart(fig)
+
+
+
+
         st.markdown("""
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
