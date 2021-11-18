@@ -678,6 +678,12 @@ def main():
         ######GRAPH02#########
         col1, col2 = st.columns([2, 1])
         with col2:
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.write(' ') 
             st.markdown(
                 """
@@ -700,11 +706,11 @@ def main():
             actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y=y, x=actor, name = 'Acteurs', marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=actor, marker_color='royalblue', boxmean=True # represent mean
             ))
 
 
-            fig.add_trace(go.Box(y=y, x=actress, name = 'Actrices', marker_color='coral', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, x=actress, marker_color='coral', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')            
@@ -713,13 +719,9 @@ def main():
 
             
             st.plotly_chart(fig)
-            st.write(' ')
-            st.write(' ')
-            st.write(' ')
-            st.write(' ')
-            st.write(' ')
-            st.write(' ')
-            st.write(' ')
+
+        st.write("")    
+        st.write("")
 
 
 
@@ -728,6 +730,12 @@ def main():
         ######GRAPH03#########
         col1, col2 = st.columns([2, 1])
         with col2:
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.write(' ') 
             st.markdown(
                 """
