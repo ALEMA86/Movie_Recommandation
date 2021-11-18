@@ -644,11 +644,12 @@ def main():
             fig, axes = plt.subplots(figsize=(15, 10))
 
             sns.set_style("whitegrid")
-            sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
-            plt.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            plt.set_xlabel("Sexe", size = 15)
-            plt.set_ylabel('Age', size = 15)
-            plt.tick_params(labelsize = 10)
+            fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+            fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            fig.set_xlabel("Sexe", size = 15)
+            fig.set_ylabel('Age', size = 15)
+            fig.tick_params(labelsize = 10)
+            fig.update_layout(title_text="Age des acteurs et actrices : Zoom", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
