@@ -699,7 +699,8 @@ def main():
                 )
 
         with col1:
-
+            fig = go.Figure()
+            fig = px.box(Age_DF_clean, x="titleType", y="Age", color="category")
 
             #y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')
             #y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')
@@ -711,12 +712,12 @@ def main():
             #))
 
 
-            #fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             
-            #st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
-        st.write("")    
-        st.write("")
+        #st.write("")    
+        #st.write("")
 
 
 
