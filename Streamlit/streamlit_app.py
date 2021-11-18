@@ -960,16 +960,20 @@ def main():
         ################
         st.title('Top 10 des films distribués en France depuis 1960 par décennies')
 
-        groupedDf = qualify_movies.groupby(['Période', 'primaryTitle'] ).size()
-        df_final  = pd.DataFrame({'inter' : groupedDf.groupby(level='Période').nlargest(5).reset_index(level=0, drop=True)})
+        groupedDf = qualify_movies.groupby(['Periode', 'primaryTitle'] ).size()
+        df_final  = pd.DataFrame({'inter' : groupedDf.groupby(level='Periode').nlargest(5).reset_index(level=0, drop=True)})
         df_final.reset_index(inplace=True)
         df_final2 = df_final.tail(70)
-        df_final2['rank'] = df_final2.groupby('Période')['inter'].rank(method = 'first')
+        df_final2['rank'] = df_final2.groupby('Periode')['inter'].rank(method = 'first')
 
         fig = px.bar(df_final2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
         title = 'Top 10 des films distribués en France depuis 1960 par décennies',
-        labels = {'Période': 'Période', 'primaryTitle': 'Films'}, orientation='h', animation_frame="Période",
-        range_x=[0,11], range_y=[0,6], width=1000, height=800)
+        labels = {'Periode': 'Période', 'primaryTitle': 'Films'},
+        orientation='h',
+        animation_frame="Periode",
+        range_x=[0,11],
+        range_y=[0,6],
+        width=1000, height=800)
  
         fig.update_traces(textfont_size=12, textposition='outside')
         fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
