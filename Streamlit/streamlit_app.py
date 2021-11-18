@@ -705,8 +705,8 @@ def main():
         with col1:
 
 
-            y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')]
-            y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')]
+            y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')
+            y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')
 
             fig = go.Figure()
             fig.add_trace(go.Box(y= y_actor, color ='category', name = 'Acteurs', boxmean=True # represent mean
