@@ -350,7 +350,6 @@ def main():
 
                 """
                 )
-
         with col1:
             fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
             title = 'Quels sont les acteurs les plus présents ?',
