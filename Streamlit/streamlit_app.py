@@ -919,13 +919,11 @@ def main():
                 Nous avons principalement utilisé les mêmes filtres que pour la question suivante afin de garder une cohérence dans notre analyse, et toujours aussi pour des raisons techniques (Dataset hébergés sur Github).
 
                 Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée', qui pondère les valeurs de la colonne 'averageRating' selon celles de la colonne 'numVotes', selon la formule de pondération de la note fournie par IMDb :
-                """
-            )
+
             st.latex(r```
                     Weighted\; Rating (WR) = (\frac{v}{v + m} . R) + (\frac{m}{v + m} . C)
                     ```)
-            st.markdown(
-                """
+
                 Où :
                 - v est le nombre de votes (= numVotes)
                 - m est le nombre minimum de votes requis pour être listé
@@ -933,8 +931,6 @@ def main():
                 - C est le vote moyen sur l'ensemble du dataset
 
                 Nous avons établi une fonction qui est la suivante pour cela :
-                """
-                )
 
             code = '''def movie_ponderation(x,m=m,C=C):
                             v=x['numVotes']
@@ -944,8 +940,7 @@ def main():
                             return (v/(v+m)*R) + (m/(m+v)*C)'''
             st.code(code, language='python')
             
-            st.markdown(
-                """
+
                 Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avons besoin pour cette analyse a été produit.
 
                 [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
