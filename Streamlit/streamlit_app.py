@@ -471,7 +471,7 @@ def main():
                 Nous avons nettoyé la base de données de la façon suivante :
                 - dans le df relatif à 'title.principals.tsv', nous avons gardé les colonnes 'tconst', 'titleType', 'startYear', 'runtimeMinutes' et 'genres'
                     - dans la colonne 'category' nous avons gardé les 'actor' et 'actress'
-                    - dans la colonne 'character', nous avons supprimé les 'backslash N', les 'Narrator', 'Various' et 'Additional Voices'
+                    - dans la colonne 'character', nous avons supprimé les st/latex(r```\R```) 'backslash N', les 'Narrator', 'Various' et 'Additional Voices'
                 - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
 
@@ -745,7 +745,7 @@ def main():
                 """
                 Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
 
-                Après sélectiond es colonnes à utiliser, nous avons nettoyé la base de données comme à notre habitude.
+                Après sélection des colonnes à utiliser, nous avons nettoyé la base de données comme à notre habitude.
 
                 Nous avons appliqué les filtres suivants, tant pour notre analyse que pour des besoins techniques (limite de taille du csv)
                 - sélection de tous les acteurs et actrices
@@ -896,11 +896,54 @@ def main():
                 """
                 )
 
+        st.write('')
         st.write(' ')
         st.write(' ')
-        st.write(' ')
+        #######################################
+        ##########  Q06 -Aurore  ##############
+        #######################################
+        st.subheader("Quels sont les films les mieux notés ?") # add a subtitle
 
 
+        frames6 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y')
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.write(' ')
+            st.markdown(
+                """
+                Le dataset a été élaboré à partir de 5 fichiers : name_basics.tsv, title_basics.tsv, title_principasl.tsv, title_ratings.csv et title_akas.csv .
+
+                Après sélection des colonnes à utiliser, nous avons nettoyé la base de données comme à notre habitude. 
+
+                Nous avons principalement utilisé les mêmes filtres que pour la question suivante afin de garder une cohérence dans notre analyse, et toujours aussi pour des raisons techniques (Dataset hébergés sur Github).
+
+                Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée'
+
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/top10.csv?token=AU6BUZSEQED65VJVLNSX4FLBS2IYO) reprenant  le top 10 des pays ayant distribué le plus de films et téléfilms a été produit.
+
+                [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
+
+                """
+                )
+
+        with col2:
+            top10Graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films")
+            top10Graph.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            st.plotly_chart(top10Graph)
+
+        st.write("")
+        st.image("https://i.ibb.co/NV1RFNH/C-mod.png") 
+        st.markdown("""
+                Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.               
+                A noter que l’on retrouve en troisième position des films dont l’origine est inconnue XWW. Cette région signifie 'World Wide' et correspond aux oeuvres que l'on peut retrouver sur internet (web, Youtube...).
+                On note également que trois des 5 continents sont représentés dans le top10.
+                La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
+                """
+                )
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
 
 
 
@@ -939,24 +982,7 @@ def main():
         ######################################################################################
         ######################################################################################
 
-        country_DF = pd.read_csv('https://raw.githubusercontent.com/ALEMA86/Movie_Recommandation/main/Streamlit/Country.csv')
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            st.title(' ')
-            st.markdown(
-                """
-                Lors de notre analyse de la base de données, nous avons pu observer une grande variété de types d'oeuvres répertoriées par IMDb. 
-            
-                Notre cliente tenant un cinéma, nous nous sommes attachés à faire un focus sur les films, et avons retenu donc retenu que le type 'movie'.
-            
 
-                """
-                )
-
-        with col2:
-            fig = px.bar(data_frame = country_DF, x= "country", y="nb_mov", labels=dict(country="Pays", nb_mov ="Nombre de films"))
-            fig.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
-            st.plotly_chart(fig)
 
 
 
