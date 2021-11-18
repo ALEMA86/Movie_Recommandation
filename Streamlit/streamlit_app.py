@@ -685,6 +685,9 @@ def main():
             st.write(' ')
             st.write(' ')
             st.write(' ') 
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')            
             st.markdown(
                 """
                 Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms :
@@ -710,12 +713,9 @@ def main():
             ))
 
 
-            fig.add_trace(go.Box(y=y, x=actress, marker_color='coral', boxmean=True # represent mean
-            ))
-            fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Population')            
+            
 
-            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
+            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
 
             
             st.plotly_chart(fig)
