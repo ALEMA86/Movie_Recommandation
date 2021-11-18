@@ -608,11 +608,8 @@ def main():
         ##########  Q06 -Aurore  ##############
         #######################################
         st.subheader("Les acteurs ont en moyenne quel âge ?") # add a subtitle
-        Age_DF_clean = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRHYXLJRXCKK2DJKYKMLBT5S4E')
-        col1, col2 = st.columns([2, 1])
-        with col2:
-            st.write(' ')
-            st.markdown(
+        Age_DF_clean = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI')
+        st.markdown(
                 """
                 Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
 
@@ -626,30 +623,115 @@ def main():
                 - ajouté une colonne "âge" qui correspond à la différence entre les valeurs des colonnes 'birthYear' et 'startYear'
                 - du fait d'une base pas 'propre', nous avons discriminé les outliers et gardé pour la colonne 'âge' toutes les valeurs situées entre 0 et 110
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRHYXLJRXCKK2DJKYKMLBT5S4E') reprenant les données dont nous avons besoin pour la présentation des graphiques a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI') reprenant les données dont nous avons besoin pour la présentation des graphiques a été produit.
 
                 [Lien Notebook]('https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/KPI/Moyenne%20%C3%A2ge%20Acteurs.ipynb')
 
                 """
                 )
-
-        with col1:
-            fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
-            title = 'Quels sont les acteurs les plus présents ?',
-            labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
-            width=800, height=600)
-
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-
-            st.plotly_chart(fig)
-
-        st.write("")
-        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
-        st.markdown("""
+        st.image("https://i.ibb.co/4SxFQYy/A-mod.png")
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ')
+            st.markdown(
+                """
+                D'après ce boxplot, la moyenne d'âge, tout sexe confondu, est de 40 ans.
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
 
+        with col1:
+            fig, axes = plt.subplots(figsize=(15, 10))
+
+            sns.set_style("whitegrid")
+            boxplot = sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            boxplot.set_xlabel("Sexe", size = 15)
+            boxplot.set_ylabel('Age', size = 15)
+            boxplot.tick_params(labelsize = 10)
+
+            moyenne = round(Age_DF_clean['Age'].mean())
+
+            plt.show()
+        st.write("")    
+        st.write("")
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ') 
+            st.markdown(
+                """
+                Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms : 
+                    - Acteurs : 43 ans
+                    - Actrices : 36 ans
+                Voici l'âge central pour ces mêmes populations : 
+                    - Acteurs : 41 ans
+                    - Actrices : 32 ans
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+
+        with col1:
+            fig, axes = plt.subplots(figsize=(15, 10))
+
+            sns.set_style("whitegrid")
+            boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age",
+                        showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+
+
+            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            boxplot.set_xlabel("Sexe", size = 15)
+            boxplot.set_ylabel('Age', size = 15)
+            boxplot.tick_params(labelsize = 10)
+
+            plt.show()
+        
+        st.write("")    
+        st.write("")
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ') 
+            st.markdown(
+                """
+                Voici les moyennes d'âge par sexe et par catégorie de film : 
+                                Films     Téléfilms                
+                    Acteurs     42 ans    45 ans
+                    Actrices    35 ans    40 ans
+ 
+                Voici l'âge central des populations sexe et par catégorie de film :
+                                Films     Téléfilms                
+                    Acteurs     41 ans    44 ans
+                    Actrices    31 ans    37 ans
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+
+        with col1:
+            fig, axes = plt.subplots(figsize=(15, 10))
+
+            sns.set_style("whitegrid")
+            boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age", hue = 'titleType',
+                        showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+
+
+            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            boxplot.set_xlabel("Sexe", size = 15)
+            boxplot.set_ylabel('Age', size = 15)
+            boxplot.tick_params(labelsize = 10)
+            boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
+
+            plt.show()
+        st.write("")
+
+        st.markdown("""
+                Voici les moyennes d'âge par genre, pour les personnes ayant tourné dans des films et des téléfilms : 
+                    - Acteurs : 43 ans
+                    - Actrices : 36 ans
+                Voici l'âge central pour ces mêmes populations : 
+                    - Acteurs : 41 ans
+                    - Actrices : 32 ans
+                **En ATTENTE**
+                """
+                )
 
         st.write(' ')
         st.write(' ')
