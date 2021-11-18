@@ -709,7 +709,7 @@ def main():
             #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y= Age_DF_clean['category',"Age"], name = 'Acteurs', boxmean=True # represent mean
+            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'], name = 'Acteurs', boxmean=True # represent mean
             ))
             #fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'].str.contains('actress'), name = 'Actrices',boxmean=True # represent mean
             #))
