@@ -630,6 +630,9 @@ def main():
                 """
                 )
         st.image("https://i.ibb.co/4SxFQYy/A-mod.png")
+        
+        
+        ######GRAPH01#########
         col1, col2 = st.columns([2, 1])
         with col2:
             st.write(' ')
@@ -666,6 +669,13 @@ def main():
             st.plotly_chart(fig)
         st.write("")    
         st.write("")
+
+
+
+
+
+
+        ######GRAPH02#########
         col1, col2 = st.columns([2, 1])
         with col2:
             st.write(' ') 
@@ -699,7 +709,7 @@ def main():
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')            
 
-            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark', boxmode='group')
+            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
             
             st.plotly_chart(fig)
@@ -710,6 +720,12 @@ def main():
             st.write(' ')
             st.write(' ')
             st.write(' ')
+
+
+
+
+
+        ######GRAPH03#########
         col1, col2 = st.columns([2, 1])
         with col2:
             st.write(' ') 
