@@ -592,7 +592,7 @@ def main():
                         On s’aperçoit qu’à l’inverse des acteurs de cinéma, les acteurs ayant tournés le plus de téléfilms ont également tournés des films au cinéma.
                         Cependant, au global ont remarque qu'ils ont tournés dans moins de films mais ont tous fait au moins des apparitions au cinéma.
                 """
-                )
+            )
 
         with col2:
             fig = px.bar(data_frame = concat_listeTopTV, x= "primaryName", y="nb", color = 'type', color_discrete_sequence=["orange", "olive"], labels=dict(primaryName="Nom de l'acteur", nb="Nombre de films"))
@@ -652,7 +652,7 @@ def main():
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
-            plt.show()
+            st.plotly_chart(boxplot)
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
