@@ -700,7 +700,7 @@ def main():
 
         with col1:
             fig = go.Figure()
-            fig = px.box(Age_DF_clean,y="Age", color="category", boxmean=True)
+            fig = px.box(Age_DF_clean,y="Age", color="category")
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')
 
@@ -750,7 +750,7 @@ def main():
 
         with col1:
             fig = go.Figure()
-            fig = px.box(Age_DF_clean, x="titleType", y="Age", color="category", boxmean=True)
+            fig = px.box(Age_DF_clean, x="titleType", y="Age", color="category")
             fig.update_yaxes(title= 'Age')
 
             fig.update_layout(title_text="Age des acteurs et actrices : par type de film et genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
