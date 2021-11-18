@@ -58,7 +58,7 @@ st.set_page_config( layout='wide')
 def main():
 
     #st.title("Movie recommandation project")
-    menu = ["Présentation du Projet", "Analyses et KPI","Movie recommandation"]
+    menu = ["Présentation du Projet", "Analyses et KPI","Movie recommandation", "Axes d'Amélioration"]
 
     choice = st.sidebar.selectbox("Menu", menu) 
 
@@ -608,6 +608,63 @@ def main():
         ##########  Q06 -Aurore  ##############
         #######################################
         st.subheader("Les acteurs ont en moyenne quel âge ?") # add a subtitle
+        Age_DF_clean = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRHYXLJRXCKK2DJKYKMLBT5S4E')
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            st.write(' ')
+            st.markdown(
+                """
+                Le dataset a été élaboré à partir de 3 fichiers : name.basics.tsv, title.principals.tsv et title.basics.tsv.
+
+                Après sélectiond es colonnes à utiliser, nous avons nettoyé la base de données comme à notre habitude.
+
+                Nous avons appliqué les filtres suivants, tant pour notre analyse que pour des besoins techniques (limite de taille du csv)
+                - sélection de tous les acteurs et actrices
+                - sélection des films et téléfilms dont la durée est supérieure à 60 minutes et dont la date de production est postérieure à 1960
+                
+                Après la jointure des 3 dataset, nous avons :
+                - ajouté une colonne "âge" qui correspond à la différence entre les valeurs des colonnes 'birthYear' et 'startYear'
+                - du fait d'une base pas 'propre', nous avons discriminé les outliers et gardé pour la colonne 'âge' toutes les valeurs situées entre 0 et 110
+
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRHYXLJRXCKK2DJKYKMLBT5S4E') reprenant les données dont nous avons besoin pour la présentation des graphiques a été produit.
+
+                [Lien Notebook]('https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/KPI/Moyenne%20%C3%A2ge%20Acteurs.ipynb')
+
+                """
+                )
+
+        with col1:
+            fig = px.bar(presence_acteur, x="primaryName", y ='index', color = 'index',
+            title = 'Quels sont les acteurs les plus présents ?',
+            labels = {'primaryName': 'Nombre de films', 'index': 'Acteurs'},
+            width=800, height=600)
+
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+
+            st.plotly_chart(fig)
+
+        st.write("")
+        st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+
+
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+
+
+
+
+
+
+
+
+
+
+
 
 
         st.markdown(
