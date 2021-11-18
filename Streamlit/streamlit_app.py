@@ -644,15 +644,15 @@ def main():
             fig, axes = plt.subplots(figsize=(15, 10))
 
             sns.set_style("whitegrid")
-            boxplot = sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
-            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            boxplot.set_xlabel("Sexe", size = 15)
-            boxplot.set_ylabel('Age', size = 15)
-            boxplot.tick_params(labelsize = 10)
+            sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+            plt.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
+            plt.set_xlabel("Sexe", size = 15)
+            plt.set_ylabel('Age', size = 15)
+            plt.tick_params(labelsize = 10)
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
-            st.plotly_chart(boxplot)
+            st.pyplot()
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
