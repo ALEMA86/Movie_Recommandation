@@ -710,9 +710,9 @@ def main():
             #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'], name = 'actor', boxmean=True # represent mean
+            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'], boxmean=True # represent mean
             ))
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'], name = 'actress', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'], boxmean=True # represent mean
             ))
             #fig.update_yaxes(title= 'Age')
             #fig.update_xaxes(title= 'Population')
