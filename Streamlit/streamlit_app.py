@@ -58,7 +58,7 @@ st.set_page_config( layout='wide')
 def main():
 
     #st.title("Movie recommandation project")
-    menu = ["Présentation du Projet", "Movie recommandation", "Analyses et KPI"]
+    menu = ["Présentation du Projet", "Analyses et KPI","Movie recommandation"]
 
     choice = st.sidebar.selectbox("Menu", menu) 
 
