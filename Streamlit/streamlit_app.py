@@ -674,7 +674,7 @@ def main():
 
             fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, labels = {'numVotes': 'Nombre moyen de votes', 'genre1': 'Genres de 1er rang'}, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
             fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            fig.update_xaxes(tickangle=90)
+            fig.update_xaxes(tickangle=180)
             
             st.plotly_chart(fig)
 
