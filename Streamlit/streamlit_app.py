@@ -683,15 +683,14 @@ def main():
 
         with col1:
             fig = go.Figure()
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], labels=dict(category = "Nom de l'acteur"),name = 'Acteur', marker_color='royalblue', boxmean=True # represent mean
             ))
-            fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Acteurs')
+
 
             fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actress', marker_color='coral', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
-            fig.update_xaxes(title= 'Actrices')            
+            fig.update_xaxes(title= 'Population')            
 
             fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
