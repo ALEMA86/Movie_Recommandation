@@ -600,7 +600,7 @@ def main():
 
             st.plotly_chart(fig)
         
-        st.write(' ')
+        st.write('')
         st.write(' ')
         st.write(' ')
 
