@@ -683,7 +683,7 @@ def main():
 
         with col1:
             fig = go.Figure()
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actor', labels=dict(actor = "Acteur"), marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
             ))
 
 
