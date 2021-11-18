@@ -657,7 +657,8 @@ def main():
                 """
                         **Top 20 des acteurs ayant tourné autant de films que de téléfilms**
 
-                         Il s’agit des acteurs des acteurs qui ont tourné le plus tout en faisant autant de téléfilm que de film.
+                        Il s’agit des acteurs des acteurs qui ont tourné le plus tout en faisant autant de téléfilm que de film.
+                        
                         La quantité de films par acteurs semble assez faible par rapport aux deux catégories suivantes.
                 """
                 )
@@ -690,6 +691,7 @@ def main():
                         **Top 20 des acteurs ayant tourné le plus de films**
 
                         Le graphique montre clairement que les acteurs ayant le plus tournés au cinéma ont fait très peu de téléfilms.
+                        
                         Il faut effectivement zoomer sur le graphique pour s’apercevoir que 4 d’entre aux ont tournés dans un ou deux téléfilms seulement.
                 """
                 )
@@ -722,6 +724,7 @@ def main():
                         **Top 20 des acteurs ayant tourné le plus de téléfilms**
 
                         On s’aperçoit qu’à l’inverse des acteurs de cinéma, les acteurs ayant tournés le plus de téléfilms ont également tournés des films au cinéma.
+                        
                         Cependant, au global ont remarque qu'ils ont tournés dans moins de films mais ont tous fait au moins des apparitions au cinéma.
                 """
             )
@@ -779,7 +782,9 @@ def main():
                 D'après ce boxplot, la moyenne d'âge, tout sexe confondu, est de 40 ans.
                 
                 Le graphique fait nettement apparaître une amplitude très large puisque l'âge des acteurs s’étend de 0 à 110 ans.
+                
                 Cependant, les âges supérieurs à 80 ans sont considérés comme des outliers. Les acteurs au-delà de cet âge sont donc malgré tout peu nombreux.
+                
                 Il est à noter également que l'âge des acteurs se concentre sur une plage limitée puisque 50% d’entre eux sont entre 29 ans et 49 ans avec une moyenne à 40 ans.
                 """
                 )
@@ -829,7 +834,9 @@ def main():
                 - Actrices :    32 ans
 
                 Lorsque l’on sépare les hommes et les femmes dans l’analyse, on s’aperçoit que ces dernières terminent généralement leur carrières plus jeunes que leur homologues masculins. Elles commencent également plus jeunes.
+                
                 L’écart entre les ages médian illustre bien cette différence puisque l'âge médian des actrices est de 32 ans contre 41 ans pour les hommes.
+                
                 Nous constatons qu’il y a beaucoup d’outliers dans les deux cas mais pour les hommes ils sont au-delà de 80 ans alors que pour les femmes cela débute à 68 ans ce qui confirme le point précédent.
 
                 """
@@ -882,6 +889,7 @@ def main():
                     - Actrices :    37 ans
 
                 Les observations sur le graphique par genre sont bien évidemment toujours vraies pour celui-ci. On note que le phénomène est le même que ce soit au cinéma ou à la télé. Cependant à la télé, les actrices et acteurs sont globalement plus âgés.
+                
                 Cela semble plus marqué pour les femmes puisque l'âge médian passe de 31 ans au cinéma à 37 ans à la télé soit 6 ans de plus, alors que chez les hommes l’écart est seulement de 3 ans (44 ans contre 41 ans).
 
                 """
@@ -1058,8 +1066,11 @@ def main():
 
         st.markdown("""
                 Il paraît opportun d’analyser simultanément les deux graphiques.
+
                 En effet, nous constatons que Western est à la fois le genre ou la note moyenne est la plus élevée mais également celui où le nombre moyen de votes est le plus important. Cela permet d’affirmer qu’il s’agit vraisemblablement du genre préféré sur la période étudiée. Le genre “Famille”, bien qu’un peu moins bien noté, est également dans ce cas. 
+                
                 A l’inverse, le thriller qui arrive en 17ème et dernière position sur la note moyenne est en 16ème position sur le nombre moyen de votes Les amateurs de Thriller sont-ils moins enclins à voter ? Est ce qu’ils votent essentiellement quand le film ne leur plait pas ou est ce que les thrillers sont simplement moins bons que les westerns ? Nous n’avons pas ici suffisamment d’éléments pour le déterminer.
+                
                 Le troisième cas est celui des documentaires. Leur note moyenne est très bonne puisqu’ils sont en deuxième position. Par contre, ils sont en dernière position en ce qui concerne le nombre de votes. En ce qui concerne ce genre, on peut estimer que celà provient du nombre de personnes qui vont voir ces films. Celui doit en effet être moins important que pour les autres. Nous n’avons cependant pas d’élément ici pour nous le confirmer.
 
                 """
