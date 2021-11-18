@@ -906,11 +906,8 @@ def main():
 
 
         frames6 = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y')
-
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            st.write(' ')
-            st.markdown(
+        st.write(' ')
+        st.markdown(
                 """
                 Le dataset a été élaboré à partir de 5 fichiers : name_basics.tsv, title_basics.tsv, title_principasl.tsv, title_ratings.csv et title_akas.csv .
 
@@ -947,19 +944,44 @@ def main():
 
                 """
                 )
+        st.image("https://i.ibb.co/4SxFQYy/A-mod.png")
+
+
+
+        col1, col2 = st.columns([1, 1])
+        with col1:
+            st.title('Note moyenne par genre de films')
+            moyenne_genre = pd.pivot_table(FULL_DF,values="averageRating",columns="genre1",aggfunc=np.mean)
+            moyenne_genre_unstacked = moyenne_genre.unstack().unstack()
+            moyenne_genre_unstacked =moyenne_genre_unstacked.sort_values('averageRating')
+
+            Genres = moyenne_genre_unstacked.index
+            moyenne = moyenne_genre_unstacked['averageRating']
+
+            fig = px.bar(moyenne_genre_unstacked, x=Genres, y =moyenne, labels = {'averageRating': 'Note moyenne', 'genre1': 'Genres de 1er rang'},color = moyenne_genre_unstacked.index,title = 'Note moyenne par genre de films ',width=600, height=450)
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            fig.update_xaxes(tickangle=-45)
+            st.plotly_chart(fig)
 
         with col2:
-            top10Graph = px.bar(top10, x='Pays', y='Nb de films', color="Nb de films")
-            top10Graph.update_layout(title_text="Palmarès des pays selon la distribution des oeuvres cinématographiques", title_x=0.5, width=1000, height=600, template='plotly_dark')
-            st.plotly_chart(top10Graph)
+            st.title('Nombre moyen de votes par genre')
+            nb_moyen_votes = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
+            nb_moyen_votes_unstacked = nb_moyen_votes.unstack().unstack()
+            nb_moyen_votes_unstacked = nb_moyen_votes_unstacked.sort_values('numVotes').round()
+
+            genres = nb_moyen_votes_unstacked.index
+            nb_votes = nb_moyen_votes_unstacked['numVotes']
+
+            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, labels = {'numVotes': 'Nombre moyen de votes', 'genre1': 'Genres de 1er rang'}, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
+            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
+            fig.update_xaxes(tickangle=-45)
+            
+            st.plotly_chart(fig)
 
         st.write("")
-        st.image("https://i.ibb.co/NV1RFNH/C-mod.png") 
+
         st.markdown("""
-                Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.               
-                A noter que l’on retrouve en troisième position des films dont l’origine est inconnue XWW. Cette région signifie 'World Wide' et correspond aux oeuvres que l'on peut retrouver sur internet (web, Youtube...).
-                On note également que trois des 5 continents sont représentés dans le top10.
-                La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
         st.write(' ')
