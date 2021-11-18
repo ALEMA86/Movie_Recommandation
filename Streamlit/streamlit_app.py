@@ -650,7 +650,7 @@ def main():
             moyenne = round(Age_DF_clean['Age'].mean())
             #fig = px.box(Age_DF_clean, y="Age")
             fig = go.Figure()
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], marker_color='lightgreen', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')
@@ -682,17 +682,21 @@ def main():
                 )
 
         with col1:
-            fig, axes = plt.subplots(figsize=(15, 10))
+            fig = go.Figure()
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
+            ))
+            fig.update_yaxes(title= 'Age')
+            fig.update_xaxes(title= 'Acteurs')
 
-            sns.set_style("whitegrid")
-            boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age",
-                        showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actress', marker_color='royalblue', boxmean=True # represent mean
+            ))
+            fig.update_yaxes(title= 'Age')
+            fig.update_xaxes(title= 'Actrices')            
 
 
-            boxplot.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            boxplot.set_xlabel("Sexe", size = 15)
-            boxplot.set_ylabel('Age', size = 15)
-            boxplot.tick_params(labelsize = 10)
+            #boxplot = sns.boxplot(data=Age_DF_clean,  x="category", y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
+
+
 
             st.plotly_chart(boxplot)
         
