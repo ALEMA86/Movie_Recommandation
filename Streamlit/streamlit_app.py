@@ -88,7 +88,7 @@ def main():
     
     
     # Menu and Sidebar creation
-    menu = ["Présentation du Projet", "Analyses et KPI","Système de recommandatio", "Axes d'Amélioration"]
+    menu = ["Présentation du Projet", "Analyses et KPI","Système de recommandation", "Axes d'Amélioration"]
     choice = st.sidebar.selectbox("", menu) 
 
     # Result from your choice inside the menu
@@ -273,12 +273,12 @@ def main():
         )
         st.markdown(
         """ 
-            *Films : types, durées...
+            * Films : types, durées...
         """
         )
         st.markdown(
         """ 
-            *Acteurs : nombre de films, type de films...
+            * Acteurs : nombre de films, type de films...
         """
         )
         st.markdown(
@@ -303,12 +303,12 @@ def main():
         )
         st.markdown(
         """ 
-	        *Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
+	        * Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
         """
         )
         st.markdown(
         """ 
-	        *Proposition d’une rétrospective avec un modèle de **Régression Logistique**
+	        * Proposition d’une rétrospective avec un modèle de **Régression Logistique**
         """
         )
 
@@ -324,6 +324,7 @@ def main():
         - Sklearn
         - Plotly
         - Streamlit
+        - CSS
         """
         )
 
@@ -335,7 +336,7 @@ def main():
         Comme énoncé ci-avant, notre client nous a fourni une base de données basée sur la plateforme IMDb. 
         Nous pouvons les retrouver [**ici**](https://datasets.imdbws.com/), l'explicatif des datasets [**là**](https://www.imdb.com/interfaces/).
 
-        Nous laissons à dispositions notre analyse de ces bases de données sur Github dans notre espace collaboratif[**fichier colab**](https://COLLAB)
+        Nous laissons à dispositions notre analyse de ces bases de données sur Github dans notre espace collaboratif [**fichier colab**](https://github.com/BerengerQueune/ABC-Data)
         """
         )
 
