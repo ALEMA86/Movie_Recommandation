@@ -317,7 +317,7 @@ def main():
         st.image("https://i.ibb.co/NV1RFNH/C-mod.png") 
         st.markdown("""
                 Ce graphique montre clairement une prédominance des USA dans le nombre de films distribués, puisque leur nombre dépasse la somme de ceux réalisés dans les deux pays suivants à savoir la Grande-Bretagne et la France.               
-                A noter également que l’on retrouve en troisième position des films dont l’origine est inconnue (XWW = World Wide).
+                A noter que l’on retrouve en troisième position des films dont l’origine est inconnue XWW. Cette région signifie 'World Wide' et correspond aux oeuvres que l'on peut retrouver sur internet (web, Youtube...).
                 On note également que trois des 5 continents sont représentés dans le top10.
                 La France confirme cependant sa position de cinéphile en étant dans le top 3 si nous excluons la région 'XWW'.
                 """
@@ -463,7 +463,9 @@ def main():
         st.markdown("""
                 La lecture du premier graphique (en haut à gauche), donne l’impression d’une grande variabilité de la durée des films entre 1960 et 2020.
                 Il s’agit en fait d’un biais de lecture lié à l’échelle utilisée. Comme la durée varie réellement peu (entre 87 et 95 mn), l’échelle du graphique a été automatiquement adaptée et fait ressortir une variation importante.
+                
                 Les trois graphiques suivants montrent donc les données avec une échelle de plus en plus large.
+                
                 Si l’on regarde le dernier graphique (avec une échelle de 0 à 100), la durée des films d’une année sur l’autre paraît à peu près stable.
                 """
                 )
