@@ -959,7 +959,13 @@ def main():
 
         ################
         st.title('Top 10 des films distribués en France depuis 1960 par décennies')
-        fig = px.bar(qualify_movies_DF_FULL2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
+        groupedDf = qualify_movies.groupby(['Période', 'primaryTitle'] ).size()
+        df_final  = pd.DataFrame({'inter' : groupedDf.groupby(level='Période').nlargest(5).reset_index(level=0, drop=True)})
+        df_final.reset_index(inplace=True)
+        df_final2 = df_final.tail(70)
+        df_final2['rank'] = df_final2.groupby('Période')['inter'].rank(method = 'first')
+
+        fig = px.bar(df_final2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
         title = 'Top 10 des films distribués en France depuis 1960 par décennies',
         labels = {'Période': 'Période', 'primaryTitle': 'Films'},
         orientation='h',
@@ -984,6 +990,9 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
+
+
+
 
 
 
