@@ -515,6 +515,12 @@ def main():
             st.write(' ')
             st.write(' ')
             st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.markdown(
                 """
                         **Top 20 des acteurs ayant tourné autant de films que de téléfilms**
@@ -541,6 +547,12 @@ def main():
             st.write(' ')
             st.write(' ')
             st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.markdown(
                 """
                         **Top 20 des acteurs ayant tourné le plus de films**
@@ -561,6 +573,12 @@ def main():
 
         col1, col2 = st.columns([1, 2])
         with col1:
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.write(' ')
             st.write(' ')
             st.write(' ')
