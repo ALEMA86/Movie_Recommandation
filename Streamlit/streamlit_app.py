@@ -652,7 +652,7 @@ def main():
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
-            st.plotly_chart(boxplot)
+            st.pyplot(boxplot)
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
