@@ -920,7 +920,7 @@ def main():
 
                 Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée', qui pondère les valeurs de la colonne 'averageRating' selon celles de la colonne 'numVotes', selon la formule de pondération de la note fournie par IMDb :
 
-            st.latex(r```
+                st.latex(r```
                     Weighted\; Rating (WR) = (\frac{v}{v + m} . R) + (\frac{m}{v + m} . C)
                     ```)
 
@@ -932,13 +932,13 @@ def main():
 
                 Nous avons établi une fonction qui est la suivante pour cela :
 
-            code = '''def movie_ponderation(x,m=m,C=C):
+                code = '''def movie_ponderation(x,m=m,C=C):
                             v=x['numVotes']
                             R=x['averageRating']
                             # calculation based on IMDB formula
     
                             return (v/(v+m)*R) + (m/(m+v)*C)'''
-            st.code(code, language='python')
+                st.code(code, language='python')
             
 
                 Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avons besoin pour cette analyse a été produit.
