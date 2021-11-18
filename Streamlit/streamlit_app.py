@@ -604,9 +604,21 @@ def main():
         st.write(' ')
         st.write(' ')
 
+        #######################################
+        ##########  Q06 -Aurore  ##############
+        #######################################
+        st.subheader("Les acteurs ont en moyenne quel âge ?") # add a subtitle
 
 
+st.markdown(
+                """
+                EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
+                             EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
+                EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
+            
 
+                """
+                )
 
 
 
