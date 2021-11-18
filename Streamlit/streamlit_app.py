@@ -755,7 +755,7 @@ def main():
                 - ajouté une colonne "âge" qui correspond à la différence entre les valeurs des colonnes 'birthYear' et 'startYear'
                 - du fait d'une base pas 'propre', nous avons discriminé les outliers et gardé pour la colonne 'âge' toutes les valeurs situées entre 0 et 110
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI') reprenant les données dont nous avons besoin pour la présentation des graphiques a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI') reprenant les données dont nous avions besoin pour la présentation des graphiques a été produit.
 
                 [Lien Notebook]('https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/KPI/Moyenne%20%C3%A2ge%20Acteurs.ipynb')
 
@@ -938,7 +938,7 @@ def main():
                 st.code(code, language='python')
             
 
-                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avons besoin pour cette analyse a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRHYWX43JCGFQCKPQXHTBT643Y) reprenant toutes les informations dont nous avions besoin pour cette analyse a été produit.
 
                 [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Projet%202%20-%20Quels%20sont%20les%20pays%20qui%20produisent%20le%20plus%20de%20films.ipynb)
 
@@ -946,33 +946,34 @@ def main():
                 )
         st.image("https://i.ibb.co/4SxFQYy/A-mod.png")
 
+        ##################
+        st.title('Quels sont les films les mieux notés ?')
+        qualify_movies_DF_FULL2 = qualify_movies.sort_values('moyenne_ponderee', ascending=False)
+        qualify_movies_DF_FULL2['text_graph'] = 'Note : ' + qualify_movies_DF_FULL2['moyenne_ponderee'].round(2).astype(str) + ', nombre de votes : '+ qualify_movies_DF_FULL2['numVotes'].astype(str)
 
-        col1, col2 = st.columns([1, 1])
-        with col1:
-            st.title('Quels sont les films les mieux notés ?')
-            qualify_movies_DF_FULL2 = qualify_movies.sort_values('moyenne_ponderee', ascending=False)
-            qualify_movies_DF_FULL2['text_graph'] = 'Note : ' + qualify_movies_DF_FULL2['moyenne_ponderee'].round(2).astype(str) + ', nombre de votes : '+ qualify_movies_DF_FULL2['numVotes'].astype(str)
+        fig = px.bar(qualify_movies_DF_FULL2, x='moyenne_ponderee', y='primaryTitle',title = 'Top 10 des films distribués en France depuis 1960', text = 'text_graph', orientation='h', range_x=[0,11],labels = {'moyenne_ponderee': 'Note', 'primaryTitle': 'Films'})
+        fig.update_yaxes(range=(9.5, -.5))
+        fig.update_layout(title_text="Top 10 des films distribués en France depuis 1960", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
-            fig = px.bar(qualify_movies_DF_FULL2, x='moyenne_ponderee', y='primaryTitle',title = 'Top 10 des films distribués en France depuis 1960', text = 'text_graph', orientation='h', range_x=[0,11],labels = {'moyenne_ponderee': 'Note', 'primaryTitle': 'Films'})
-            fig.update_yaxes(range=(9.5, -.5))
-            fig.update_layout(title_text="Top 10 des films distribués en France depuis 1960", title_x=0.5, width=1000, height=600, template='plotly_dark')
+        st.plotly_chart(fig)
 
-            st.plotly_chart(fig)
+        ################
+        st.title('Top 10 des films distribués en France depuis 1960 par décennies')
+        fig = px.bar(df_final2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
+        title = 'Top 10 des films distribués en France depuis 1960 par décennies',
+        labels = {'Période': 'Période', 'primaryTitle': 'Films'},
+        orientation='h',
+        animation_frame="Période",
+        range_x=[0,11],
+        range_y=[0,6],
+        width=1000, height=800)
+ 
+        fig.update_traces(textfont_size=12, textposition='outside')
+        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 
-        with col2:
-            st.title('Nombre moyen de votes par genre')
-            nb_moyen_votes = pd.pivot_table(FULL_DF,values="numVotes",columns="genre1",aggfunc=np.mean)
-            nb_moyen_votes_unstacked = nb_moyen_votes.unstack().unstack()
-            nb_moyen_votes_unstacked = nb_moyen_votes_unstacked.sort_values('numVotes').round()
-
-            genres = nb_moyen_votes_unstacked.index
-            nb_votes = nb_moyen_votes_unstacked['numVotes']
-
-            fig = px.bar(nb_moyen_votes_unstacked, x=genres, y =nb_votes, labels = {'numVotes': 'Nombre moyen de votes', 'genre1': 'Genres de 1er rang'}, color = nb_moyen_votes_unstacked.index,title = "Nombre moyen de votes par genre",width=600, height=450)
-            fig.update_layout(showlegend=False, title_x=0.5, yaxis={'visible': True}, template='plotly_dark')
-            fig.update_xaxes(tickangle=-45)
+        fig.update_layout(showlegend=False, title_x=0.5, width=1000, height=600, template='plotly_dark')
             
-            st.plotly_chart(fig)
+        st.plotly_chart(fig)
 
         st.write("")
 
