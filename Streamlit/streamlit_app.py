@@ -959,7 +959,7 @@ def main():
 
         ################
         st.title('Top 10 des films distribués en France depuis 1960 par décennies')
-        fig = px.bar(df_final2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
+        fig = px.bar(qualify_movies_DF_FULL2, x = 'inter',y ='rank', text = 'primaryTitle',color = 'primaryTitle',
         title = 'Top 10 des films distribués en France depuis 1960 par décennies',
         labels = {'Période': 'Période', 'primaryTitle': 'Films'},
         orientation='h',
