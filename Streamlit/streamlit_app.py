@@ -697,23 +697,35 @@ def main():
 
             
             st.plotly_chart(fig)
-        
-        st.write("")    
-        st.write("")
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
         col1, col2 = st.columns([2, 1])
         with col2:
             st.write(' ') 
             st.markdown(
                 """
-                Voici les moyennes d'âge par sexe et par catégorie de film : 
-                                Films     Téléfilms                
-                    Acteurs     42 ans    45 ans
-                    Actrices    35 ans    40 ans
+                Voici les moyennes d'âge par sexe et par catégorie de film :
+                - Films :
+                    - Acteurs :     42 ans
+                    - Actrices :    35 ans
+                - Téléfilms :
+                    - Acteurs :     45 ans
+                    - Actrices :    40 ans
+                            
  
                 Voici l'âge central des populations sexe et par catégorie de film :
-                                Films     Téléfilms                
-                    Acteurs     41 ans    44 ans
-                    Actrices    31 ans    37 ans
+                - Films :
+                    - Acteurs :     41 ans
+                    - Actrices :    31 ans
+                - Téléfilms :
+                    - Acteurs :     44 ans
+                    - Actrices :    37 ans
+
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
                 )
