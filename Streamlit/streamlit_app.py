@@ -993,38 +993,6 @@ def main():
             
         st.plotly_chart(fig)
 
-
-        st.title('Quels sont les films les mieux notés - Caractéristiques communes ? - Zoom avancé')
-        scater3D_test = FULL_DF[FULL_DF['moyenne_ponderee'] >= 8 ]
-        fig = px.scatter_3d(scater3D_test,x="genre1",y ='genre2', z= 'genre3', color = 'moyenne_ponderee' )
-        fig.update_layout(title_text="Caractéristiques communes des films les mieux notés", title_x=0.5, width=1000, height=600, template='plotly_dark')
-            
-        st.plotly_chart(fig)
-
-
-
-        st.markdown("""
-                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
-                """
-                )
-        st.write(' ')
-        st.write(' ')
-        st.write(' ')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         col1, col2 = st.columns([1, 1])
         with col1:
             st.title('Note moyenne par genre de films')
@@ -1054,6 +1022,30 @@ def main():
             fig.update_xaxes(tickangle=-45)
             
             st.plotly_chart(fig)
+
+
+
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+                """
+                )
+        st.write(' ')
+        st.write(' ')
+        st.write(' ')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         st.write("")
 
