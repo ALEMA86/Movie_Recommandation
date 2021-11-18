@@ -95,7 +95,7 @@ def main():
     if choice == 'Système de recommandation':
 
         # CSS code within markdown to center the title
-        st.markdown("<h1 style='text-align: center;'>Recommandation de films</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center;'>Recommandation de Films</h1>", unsafe_allow_html=True)
 
         # Variable X used for Machine Learning
         X = df_output_movies[['Action',
@@ -507,7 +507,8 @@ def main():
         ########  Q03 -Bérenger  ############
         #####################################
         st.subheader("Quels sont les acteurs les plus présents, à quelle période ?") # add a subtitle
-        acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK")
+
+        acteur_par_periode = pd.read_csv("https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AUTGRH4M4FBOFMK6DAW3X33BT6Z2S")
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
