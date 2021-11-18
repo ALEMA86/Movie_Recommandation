@@ -960,7 +960,7 @@ def main():
         ################
         st.title('Top 10 des films distribués en France depuis 1960 par décennies')
 
-        groupedDf = qualify_movies_DF_FULL2.groupby(['Période', 'primaryTitle'] ).size()
+        groupedDf = qualify_movies.groupby(['Période', 'primaryTitle'] ).size()
         df_final  = pd.DataFrame({'inter' : groupedDf.groupby(level='Période').nlargest(5).reset_index(level=0, drop=True)})
         df_final.reset_index(inplace=True)
         df_final2 = df_final.tail(70)
