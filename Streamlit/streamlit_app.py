@@ -652,7 +652,8 @@ def main():
             fig = go.Figure()
             fig.add_trace(go.Box(y=Age_DF_clean["Age"], marker_color='royalblue', boxmean=True # represent mean
             ))
-            
+            fig.update_yaxes(title= 'Age')
+            fig.update_xaxes(title= 'Population')
             #fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
             #fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
             #fig.set_xlabel("Sexe", size = 15)
