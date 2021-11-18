@@ -643,7 +643,7 @@ def main():
         with col1:
             fig, axes = plt.subplots(figsize=(15, 10))
 
-            sns.set_style("whitegrid")
+            #sns.set_style("whitegrid")
             fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
             fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
             fig.set_xlabel("Sexe", size = 15)
