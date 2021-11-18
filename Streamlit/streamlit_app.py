@@ -651,17 +651,13 @@ def main():
                 )
 
         with col1:
-            moyenne = round(Age_DF_clean['Age'].mean())
-            #fig = px.box(Age_DF_clean, y="Age")
+
+
             fig = go.Figure()
             fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'Population', marker_color='lightgreen', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
-            #fig= sns.boxplot(data=Age_DF_clean,  y="Age", showmeans=True, meanprops={"marker": "x", "markeredgecolor": "red", "markersize": "30"})
-            #fig.axes.set_title('Age des acteurs et actrices : Zoom',fontsize=25)
-            #fig.set_xlabel("Sexe", size = 15)
-            #fig.set_ylabel('Age', size = 15)
-            #fig.tick_params(labelsize = 10)
+
             fig.update_layout(title_text="Age des acteurs et actrices : Zoom", title_x=0.5, width=1000, height=600, template='plotly_dark')
 
 
@@ -705,33 +701,30 @@ def main():
         with col1:
 
 
-            y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')
-            y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')
+            #y_actor = Age_DF_clean["Age", 'category'].str.contains('actor')
+            #y_actress = Age_DF_clean["Age", 'category'].str.contains('actress')
 
-            fig = go.Figure()
-            fig.add_trace(go.Box(y= y_actor, color ='category', name = 'Acteurs', boxmean=True # represent mean
-            ))
-            fig.add_trace(go.Box(y= y_actress, color ='category', name = 'Actrices', boxmean=True # represent mean
-            ))
-            #fig.update_yaxes(title= 'Age')
-            #fig.update_xaxes(title= 'Population')
-            #fig.update_yaxes(title= 'Age')
-            #fig.update_xaxes(title= 'Population')
+            #fig = go.Figure()
+            #fig.add_trace(go.Box(y= y_actor, color ='category', name = 'Acteurs', boxmean=True # represent mean
+            #))
+            #fig.add_trace(go.Box(y= y_actress, color ='category', name = 'Actrices', boxmean=True # represent mean
+            #))
 
-            fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
+
+            #fig.update_layout(title_text="Age des acteurs et actrices : par genre", title_x=0.5, width=1000, height=600, template='plotly_dark')
             
-            st.plotly_chart(fig)
+            #st.plotly_chart(fig)
 
-        #st.write("")    
-        #st.write("")
+        st.write("")    
+        st.write("")
 
 
 
 
 
         ######GRAPH03#########
-        #col1, col2 = st.columns([2, 1])
-        #with col2:
+        col1, col2 = st.columns([2, 1])
+        with col2:
             st.write(' ')
             st.write(' ')
             st.write(' ')
@@ -764,7 +757,13 @@ def main():
 
         with col1:
             x = Age_DF_clean['titleType']
+
+
             fig = go.Figure()
+            fig = px.box(Age_DF_clean, x="titleType", y="Age", color="category")
+
+
+
 
             #fig = px.box(x=Age_DF_clean["titleType"], y= Age_DF_clean["Age"], color=Age_DF_clean["category"], boxmean=True
             #)
@@ -780,11 +779,11 @@ def main():
             #boxplot.tick_params(labelsize = 10)
             #boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
             
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"],x=x,name='actor',boxmean=True, marker_color='#FF4136'))
+            #fig.add_trace(go.Box(y=Age_DF_clean["Age"],x=x,name='actor',boxmean=True, marker_color='#FF4136'))
 
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x=x, name='actress', boxmean=True, marker_color='#FF851B' ))
+            #fig.add_trace(go.Box(y=Age_DF_clean["Age"], x=x, name='actress', boxmean=True, marker_color='#FF851B' ))
 
-            fig.update_layout( yaxis_title='Type de films', boxmode='group')
+            #fig.update_layout( yaxis_title='Type de films', boxmode='group')
 
             st.plotly_chart(fig)
         st.write("")
