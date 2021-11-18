@@ -652,7 +652,7 @@ def main():
 
             moyenne = round(Age_DF_clean['Age'].mean())
 
-            st.pyplot(boxplot)
+            st.plotly_chart(boxplot)
         st.write("")    
         st.write("")
         col1, col2 = st.columns([2, 1])
@@ -683,7 +683,7 @@ def main():
             boxplot.set_ylabel('Age', size = 15)
             boxplot.tick_params(labelsize = 10)
 
-            st.pyplot(boxplot)
+            st.plotly_chart(boxplot)
         
         st.write("")    
         st.write("")
@@ -719,7 +719,7 @@ def main():
             boxplot.tick_params(labelsize = 10)
             boxplot.legend(loc = 'upper right', prop={'size': 15}, borderaxespad=0.)
 
-            st.pyplot(boxplot)
+            st.plotly_chart(boxplot)
         st.write("")
 
         st.markdown("""
