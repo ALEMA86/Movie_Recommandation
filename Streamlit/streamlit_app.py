@@ -633,6 +633,12 @@ def main():
         col1, col2 = st.columns([2, 1])
         with col2:
             st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
+            st.write(' ')
             st.markdown(
                 """
                 D'après ce boxplot, la moyenne d'âge, tout sexe confondu, est de 40 ans.
