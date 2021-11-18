@@ -710,7 +710,10 @@ def main():
             fig = go.Figure()
             fig.add_trace(go.Box(y=y, x=x, marker_color='royalblue', boxmean=True # represent mean
             ))
-
+            fig.add_trace(go.Box(y=y, x=actress, marker_color='coral', boxmean=True # represent mean
+            ))
+            fig.update_yaxes(title= 'Age')
+            fig.update_xaxes(title= 'Population')
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')
 
