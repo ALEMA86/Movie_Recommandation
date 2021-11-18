@@ -1003,7 +1003,7 @@ def main():
         st.title('Quels sont les films les mieux notés (+ de 8/10) - Caractéristiques communes ?')
         qualify_movies2 = qualify_movies.copy()
         qualify_movies2 = qualify_movies2[qualify_movies2['moyenne_ponderee'] >= 8 ]
-        qualify_movies2 = qualify_movies2[qualify_movies2['moyenne_ponderee'] <= 9.5 ]
+        qualify_movies2 = qualify_movies2[qualify_movies2['moyenne_ponderee'] <= 9 ]
 
         fig = px.scatter_3d(qualify_movies2,x="genre1",y ='genre2', z= 'genre3', color = 'moyenne_ponderee'  )
         fig.update_layout(title_text="Caractéristiques communes des films les mieux notés", title_x=0.5, width=1000, height=600, template='plotly_dark')
@@ -1014,12 +1014,11 @@ def main():
 
 
         st.markdown("""
-                Nous remarquons qu'avec la quantité de données en notre possession, il est très difficile d'interpréter ce scatterplot pour déterminer quelle association de genres permettrait aux films de maximiser leurs chances d'être bien noté.
-                Zoomons donc sur les films dont la moyenne pondérée est supérieure à 8/10 :
+                La moyenne pondérée la plus élevée étant 8.96, nous avons aussi pris en borne haute 9/10 afin de mettre plus en avant les valeurs à interprêter dans ce scatterplot.
+                Nous pouvons remarquer que l'association de genres qui détient cette note est "Action/Crime/Drama".
+
                 """
                 )
-
-
 
 
         ####################################
@@ -1053,8 +1052,6 @@ def main():
             
             st.plotly_chart(fig)
 
-
-
         st.markdown("""
                 **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
                 """
@@ -1062,6 +1059,66 @@ def main():
         st.write(' ')
         st.write(' ')
         st.write(' ')
+        st.title('Pour aller plus loin... Quelques KPI !')
+        st.write(' ')
+        st.markdown("""
+        [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Christophe/Scripts%20VF/KPI%20r%C3%A9alisateurs%20-%202021_11_17.ipynb)
+        """
+                )
+        st.write(' ')
+        st.markdown("""
+                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
+
+        [DataFrame](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_final_director.csv?token=AVCI5TY6PATH3QY4C25CC5TBT5IIA)
+                """
+                )        
+
+        df_final = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_final_director.csv?token=AVCI5TY6PATH3QY4C25CC5TBT5IIA')
+
+        #Réalisation du graphique
+        fig = px.bar(df_final, x = 'count', y="rang", text ='director', color = 'director',
+        title = 'Les réalisateurs qui ont fait le plus de film par décennie',
+        labels = {'count':'Nombre de films','periode': 'Décennie', 'director': 'Réalisateur'},
+        orientation='h',
+        animation_frame="periode",
+        range_x=[0,9],
+        #range_y=[0,4],
+        width=700, height=450)
+ 
+        fig.update_traces(textfont_size=12, textposition='outside')
+        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+
+        fig.update_layout(showlegend=False, title_x=0.5, template='plotly_dark')
+
+
+        ###############################
+        #Création d'un dataframe avec les 3 réalisateurs ayant réalisé le plus de film depuis 1960
+        df_director_nbFilm = pd.DataFrame(df_director.value_counts('director'))
+        df_director_nbFilm.reset_index(inplace = True)
+        df_director_nbFilm.columns = ['director', 'nbFilm']
+
+        #Calcul du rang
+        df_director_nbFilm['Rang'] = df_director_nbFilm.index + 1
+        df_director_nbFilm = df_director_nbFilm.head(3)
+
+        st.write(' ')
+        st.write(' ')
+        ###############################
+        st.markdown("""
+        [DataFrame](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_director_nbFilm.csv?token=AVCI5T7CVK5U4UHCL66ABS3BT5INA)
+                """
+                )
+        st.write(' ')
+        df_director_nbFilm = pd.read_csv('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_director_nbFilm.csv?token=AVCI5T7CVK5U4UHCL66ABS3BT5INA')
+
+        #Réalisation du graphique
+        fig = px.bar(df_director_nbFilm, x = 'nbFilm', y="Rang", text ='director', color = 'director',
+            title = 'Les réalisateurs qui ont fait le plus de film depuis 1960', 
+            labels = {'nbFilm': 'Nombre de films', 'director': 'Réalisateur'},orientation='h', range_x=[0,30], range_y=[0,4],width=700, height=450)
+
+        fig.update_layout(showlegend=False, title_x=0.5, template='plotly_dark')
+        
+        
 
 
 
