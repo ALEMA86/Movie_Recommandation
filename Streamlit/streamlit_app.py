@@ -1093,7 +1093,7 @@ def main():
 
         ###############################
         #Création d'un dataframe avec les 3 réalisateurs ayant réalisé le plus de film depuis 1960
-        df_director_nbFilm = pd.DataFrame(df_director.value_counts('director'))
+        df_director_nbFilm = pd.DataFrame(df_final.value_counts('director'))
         df_director_nbFilm.reset_index(inplace = True)
         df_director_nbFilm.columns = ['director', 'nbFilm']
 
