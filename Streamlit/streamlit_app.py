@@ -1088,8 +1088,9 @@ def main():
         fig.update_traces(textfont_size=12, textposition='outside')
         fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 
-        fig.update_layout(showlegend=False, title_x=0.5, template='plotly_dark')
-
+        fig.update_layout(showlegend=False, title_x=0.5, width=1000, height=600, template='plotly_dark')
+            
+        st.plotly_chart(fig)
 
         ###############################
         #Création d'un dataframe avec les 3 réalisateurs ayant réalisé le plus de film depuis 1960
@@ -1116,7 +1117,9 @@ def main():
             title = 'Les réalisateurs qui ont fait le plus de film depuis 1960', 
             labels = {'nbFilm': 'Nombre de films', 'director': 'Réalisateur'},orientation='h', range_x=[0,30], range_y=[0,4],width=700, height=450)
 
-        fig.update_layout(showlegend=False, title_x=0.5, template='plotly_dark')
+        fig.update_layout(showlegend=False, title_x=0.5, width=1000, height=600, template='plotly_dark')
+            
+        st.plotly_chart(fig)
         
         
 
