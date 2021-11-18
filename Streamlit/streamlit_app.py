@@ -705,14 +705,14 @@ def main():
         with col1:
 
             #y = Age_DF_clean["Age"]
-            #x = Age_DF_clean[Age_DF_clean['category']
+            #x = Age_DF_clean['category']
             #x_actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
             #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y= Age_DF_clean["Age"], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y= Age_DF_clean["Age"], x = Age_DF_clean['category'], name = 'actor', marker_color='royalblue', boxmean=True # represent mean
             ))
-            fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'actress', marker_color='coral', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=Age_DF_clean["Age"], x = Age_DF_clean['category'], name = 'actress', marker_color='coral', boxmean=True # represent mean
             ))
             #fig.update_yaxes(title= 'Age')
             #fig.update_xaxes(title= 'Population')
