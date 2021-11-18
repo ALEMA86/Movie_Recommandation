@@ -706,13 +706,13 @@ def main():
 
             y = Age_DF_clean["Age"]
             x = Age_DF_clean[Age_DF_clean['category']
-            x_actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
-            x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
+            #x_actor = Age_DF_clean[Age_DF_clean['category'].str.contains('actor')]
+            #x_actress = Age_DF_clean[Age_DF_clean['category'].str.contains('actress')]
 
             fig = go.Figure()
-            fig.add_trace(go.Box(y=y, x=x_actor, marker_color='royalblue', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, marker_color='royalblue', boxmean=True # represent mean
             ))
-            fig.add_trace(go.Box(y=y, x=x_actress, marker_color='coral', boxmean=True # represent mean
+            fig.add_trace(go.Box(y=y, marker_color='coral', boxmean=True # represent mean
             ))
             fig.update_yaxes(title= 'Age')
             fig.update_xaxes(title= 'Population')
