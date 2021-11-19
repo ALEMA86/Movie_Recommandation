@@ -215,11 +215,7 @@ def main():
 	        * Recommandation de films proches d’un film cible grâce à un modèle de **KNN**
         """
         )
-        st.markdown(
-        """ 
-	        * Proposition d’une rétrospective avec un modèle de **Régression Logistique**
-        """
-        )
+
 
         st.subheader('')
         st.subheader("Outils")
@@ -504,9 +500,12 @@ def main():
         col1, col2 = st.columns([1, 2])
         with col1:
             st.write(' ')
+            st.write('')
+            st.write(' ')
+            st.write(' ')
             st.markdown(
                 """
-                
+            
                 Pour ce graphique, nous avons pu utiliser une partie du travail effectué dans la question précédente.
 
                 Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK') reprenant les 5 acteurs les plus présents pour chaque décennies depuis 1910.
@@ -517,6 +516,7 @@ def main():
                 )
 
         with col2:
+            
             fig = px.bar(acteur_par_periode, x = 'count', y="rank", text ='primaryName', color = 'primaryName',
             title = 'Quels sont les acteurs les plus présents par périodes ?',
             labels = {'startYear': 'Période', 'primaryName': 'Acteurs'},
