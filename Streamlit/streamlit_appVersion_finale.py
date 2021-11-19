@@ -909,11 +909,13 @@ def main():
                 Nous avons principalement utilisé les mêmes filtres que pour la question suivante afin de garder une cohérence dans notre analyse, et toujours aussi pour des raisons techniques (Dataset hébergés sur Github).
 
                 Dans ce dataset, nous avons aussi ajouté une colonne 'moyenne_pondérée', qui pondère les valeurs de la colonne 'averageRating' selon celles de la colonne 'numVotes', selon la formule de pondération de la note fournie par IMDb :
-
+                """
+                )
                 st.latex(r```
                     Weighted\; Rating (WR) = (\frac{v}{v + m} . R) + (\frac{m}{v + m} . C)
                     ```)
-
+        st.markdown(
+                """
                 Où :
                 - v est le nombre de votes (= numVotes)
                 - m est le nombre minimum de votes requis pour être listé
@@ -921,7 +923,8 @@ def main():
                 - C est le vote moyen sur l'ensemble du dataset
 
                 Nous avons établi une fonction qui est la suivante pour cela :
-
+                """
+                )
                 code = '''def movie_ponderation(x,m=m,C=C):
                             v=x['numVotes']
                             R=x['averageRating']
@@ -929,7 +932,8 @@ def main():
     
                             return (v/(v+m)*R) + (m/(m+v)*C)'''
                 st.code(code, language='python')
-            
+        st.markdown(
+                """            
 
                 Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/DF_FULL_GENRES211117.csv?token=AUTGRH2J25FKEQLFK7VPH5TBT7DVE) reprenant toutes les informations dont nous avions besoin pour cette analyse a été produit.
 
