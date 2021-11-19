@@ -88,30 +88,9 @@ def main():
     
     
     # Menu and Sidebar creation
-    st.write(" ")
-    st.write(" ")
-    st.image("https://i.ibb.co/0hnKBMX/Framboise2.png")
-    st.write("Bienvenue")
-    st.write("Framboise")
-    st.write(" ")
-    st.write(" ")
     menu = ["Présentation du Projet", "Analyses et KPI","Système de recommandation", "Axes d'Amélioration"]
     choice = st.sidebar.selectbox("", menu)
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.write(" ")
-    st.image("https://d1qg2exw9ypjcp.cloudfront.net/assets/prod/24134/210x210-9_cropped_1377120495_p182hcd8rofaq1t491u06kih16o13.png")
+
 
 
 
