@@ -1188,19 +1188,18 @@ def main():
 
 
 
+######################################################################################
+######################################################################################
+###########################     RELEASES     #########################################
+######################################################################################
+######################################################################################
 
 
-
-
-        st.markdown(
-                """
-                EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
-                             EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
-                EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            EN COURS DE CONSTRUCTION            
-            
-
-                """
-                )
+    elif choice == "Axes d'Amélioration":
+                        # CSS code within markdown to center the title
+        st.markdown("<h1 style='text-align: center;'>Axes d'Amélioration</h1>", unsafe_allow_html=True)
+                # This create a nice grey line between the title and the multiselect menu
+        st.write("---------------------------------------------------------")
 
 
 
