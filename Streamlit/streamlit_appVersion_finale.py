@@ -140,7 +140,7 @@ def main():
         df_final_genres = distanceKNN.kneighbors(df_final_genres)
         # A reshape again... not sure if really required
         df_final_genres = df_final_genres[1].reshape(1,5)[0]
-        # Looking for best matches using index of movies
+        # Looking for index of movies that matches the most
         liste_finale = df_output_movies.iloc[df_final_genres]
 
         # Creation of a variable used later to each instance of nearest neighbors (5) within a different columns
