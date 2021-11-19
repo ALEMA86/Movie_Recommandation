@@ -468,7 +468,7 @@ def main():
                     - dans la colonne 'character', nous avons supprimé les ```\R```, les 'Narrator', 'Various' et 'Additional Voices'
                 - dans le df relatif à 'title.basics.tsv', nous avons gardé les colonnes 'tconst', 'nconst', 'category' et 'characters'
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI') reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI) reprenant les 20 acteurs les plus présents quelle que soit l'époque a été produit.
 
                 [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
 
@@ -510,7 +510,7 @@ def main():
                 
                 Pour ce graphique, j'ai pu utiliser une partie du travail effectué à la question précédente. Voilà. Merci.
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK') reprenant les 5 acteurs les plus présents pour chaque décennies depuis 1910.
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK) reprenant les 5 acteurs les plus présents pour chaque décennies depuis 1910.
 
                 [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Quels_sont_les_acteurs_les_plus_pr%C3%A9sents.ipynb?token=AUTGRHYRYCTRXKOZDDLVIELBTZL3I)
 
@@ -560,7 +560,7 @@ def main():
 
                 Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Database_projet/presence_acteurs.csv?token=AU6BUZU76KCNKK6X5NKIZ6DBTZPVI) reprennant toutes les informations requises a été produit.
 
-                [Lien Notebook]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/Projet%202%20-%20La%20dur%C3%A9e%20moyenne%20des%20films%20s%E2%80%99allonge%20ou%20se%20raccourcit%20avec%20les%20ann%C3%A9es.ipynb?token=AUTGRH3TRSZ7CDJ62ME6XU3BT44DO')
+                [Lien Notebook](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/Projet%202%20-%20La%20dur%C3%A9e%20moyenne%20des%20films%20s%E2%80%99allonge%20ou%20se%20raccourcit%20avec%20les%20ann%C3%A9es.ipynb?token=AUTGRH3TRSZ7CDJ62ME6XU3BT44DO)
 
                 """
             )
@@ -748,9 +748,9 @@ def main():
                 - ajouté une colonne "âge" qui correspond à la différence entre les valeurs des colonnes 'birthYear' et 'startYear'
                 - du fait d'une base pas 'propre', nous avons discriminé les outliers et gardé pour la colonne 'âge' toutes les valeurs situées entre 0 et 110
 
-                Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI') reprenant les données dont nous avions besoin pour la présentation des graphiques a été produit.
+                Afin de réaliser le graphique, un [dataframe attitré](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Aurore/KPI/Age_acteurs20211118.csv?token=AUTGRH6AOVYKCSBEBIWDCLTBT5VZI) reprenant les données dont nous avions besoin pour la présentation des graphiques a été produit.
 
-                [Lien Notebook]('https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/KPI/Moyenne%20%C3%A2ge%20Acteurs.ipynb')
+                [Lien Notebook](https://github.com/BerengerQueune/ABC-Data/blob/main/Aurore/KPI/Moyenne%20%C3%A2ge%20Acteurs.ipynb)
 
                 """
                 )
