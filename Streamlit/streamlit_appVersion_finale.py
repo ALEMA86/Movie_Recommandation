@@ -781,7 +781,6 @@ def main():
 
         with col1:
 
-
             fig = go.Figure()
             fig.add_trace(go.Box(y=Age_DF_clean["Age"], name = 'Population', marker_color='lightgreen', boxmean=True # represent mean
             ))
@@ -825,7 +824,7 @@ def main():
 
                 Lorsque l’on sépare les hommes et les femmes dans l’analyse, on s’aperçoit que ces dernières terminent généralement leur carrières plus jeunes que leur homologues masculins. Elles commencent également plus jeunes.
                 
-                L’écart entre les ages médian illustre bien cette différence puisque l'âge médian des actrices est de 32 ans contre 41 ans pour les hommes.
+                L’écart entre les ages médians illustre bien cette différence puisque l'âge médian des actrices est de 32 ans contre 41 ans pour les hommes.
                 
                 Nous constatons qu’il y a beaucoup d’outliers dans les deux cas mais pour les hommes ils sont au-delà de 80 ans alors que pour les femmes cela débute à 68 ans ce qui confirme le point précédent.
 
@@ -833,6 +832,7 @@ def main():
                 )
 
         with col1:
+
             fig = go.Figure()
             fig = px.box(Age_DF_clean,y="Age", color="category")
             fig.update_yaxes(title= 'Age')
@@ -895,13 +895,6 @@ def main():
 
             st.plotly_chart(fig)
         st.write("")
-
-        st.markdown("""
-                
-                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
-                """
-                )
-
         st.write('')
         st.write(' ')
         st.write(' ')
@@ -1085,8 +1078,6 @@ def main():
                 )
         st.write(' ')
         st.markdown("""
-                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
-
         [DataFrame](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_final_director.csv?token=AVCI5TY6PATH3QY4C25CC5TBT5IIA)
                 """
                 )        
@@ -1147,8 +1138,6 @@ def main():
                 )
         st.write(' ')
         st.markdown("""
-                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
-
         [DataFrame](https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Christophe/df_rating.csv?token=AVCI5T6KBWAVG7CL46KTL3DBT6GOU)
                 """
                 )
@@ -1163,15 +1152,6 @@ def main():
             
         st.plotly_chart(fig)
 
-
-
-
-        st.write("")
-
-        st.markdown("""
-                **EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE EN ATTENTE**
-                """
-                )
         st.write(' ')
         st.write(' ')
         st.write(' ')
