@@ -346,8 +346,7 @@ def main():
                 # Add one to the numero_colonne variable so next nearest neighbors will be inside the following column
                 numero_colonne +=1
 
-
-        st.image("https://c.neh.tw/thumb/f/720/m2i8d3A0Z5Z5d3G6.jpg")       
+    
 ######################################################################################
 ######################################################################################
 ###########################     AURORE     ###########################################
