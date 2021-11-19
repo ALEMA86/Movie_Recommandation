@@ -359,9 +359,7 @@ def main():
 
         
         
-        
-        
-        
+
         link2 = 'https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/film3.csv?token=AUTGRH7SSI52W67SWYW35Z3BT7VCQ'
         film = pd.read_csv(link2)
 
@@ -489,7 +487,7 @@ def main():
         st.write("")
         st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
         st.markdown("""
-                Conclusion : j'ai trouvé intéressant, dans le cadre de nos études de répondre à cette question car cela a été l'occasion de s'exercer à explorer et nettoyer une base de données. Cependant, je trouve que la réponse en elle-même n'apporte que peu d'élément, voire aucun, qui puisse aider notre cliente à prendre des décisions.
+                Nous avons trouvé intéressant, dans le cadre de nos études, de répondre à cette question car cela a été l'occasion de s'exercer à explorer et nettoyer une base de données. Cependant, nous trouvons que la réponse en elle-même n'apporte que peu d'éléments, voire aucun, qui puissent aider notre cliente à prendre des décisions.
                 """
                 )
 
@@ -509,7 +507,7 @@ def main():
             st.markdown(
                 """
                 
-                Pour ce graphique, j'ai pu utiliser une partie du travail effectué à la question précédente. Voilà. Merci.
+                Pour ce graphique, nous avons pu utiliser une partie du travail effectué dans la question précédente.
 
                 Afin de réaliser le graphique, un [dataframe attitré]('https://raw.githubusercontent.com/BerengerQueune/ABC-Data/main/Berenger/Streamlit/acteur_par_periode.csv?token=AU6BUZWYJ6GYLJLQVDQCLZTBSZ2NK') reprenant les 5 acteurs les plus présents pour chaque décennies depuis 1910.
 
@@ -539,7 +537,10 @@ def main():
         st.write("")
         st.image("https://i.ibb.co/bHkZJb7/B-mod.png") 
         st.markdown("""
-                Conclusion : j'ai trouvé intéressant, dans le cadre de nos études de répondre à cette question car cela a été l'occasion de s'exercer à explorer et nettoyer une base de données. Cependant, je trouve que la réponse en elle-même n'apporte que peu d'élément, voire aucun, qui puisse aider notre cliente à prendre des décisions. Je note tout de même que le graphique est le résultat d'un travail de groupe effectué avec Aurore ce qui, en soit, fut l'action la plus intéressante lors de mon travail sur cette question.
+                Dans le cadre de nos études, il est intéressant de répondre à cette question car cela a été l'occasion de s'exercer à l'exploration et au nettoyage d'une base de données. 
+                
+                Cependant, la réponse en elle-même n'apporte elle aussi que peu d'éléments, voire aucun, qui puissent aider notre cliente à prendre des décisions. 
+
                 """
                 )
         st.write(' ')
